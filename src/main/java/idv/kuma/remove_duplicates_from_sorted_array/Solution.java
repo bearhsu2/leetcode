@@ -14,7 +14,8 @@ class Solution {
 
         for (int i = 1; i < nums.length; ) {
 
-            if (nums[i] < currentMax)  break;
+
+            if (i >= targetLength) break;
 
             int nextValue = nums[i];
 
@@ -28,10 +29,11 @@ class Solution {
                 }
                 targetLength--;
 
-                if (nums[i] > currentMax) {
-                    currentMax = nums[i];
-                    i++;
-                }
+            }
+
+            if (nums[i] > currentMax) {
+                currentMax = nums[i];
+                i++;
             }
 
         }

@@ -34,4 +34,14 @@ public class SolutionTest {
         Assert.assertArrayEquals(new int[]{1, 1}, original);
 
     }
+
+    @Test
+    public void When_1_2_Then_Return_1() throws Exception {
+
+        int[] original = new int[]{1, 2};
+        Solution solution = new Solution();
+        Assert.assertEquals(2, solution.removeDuplicates(original));
+        Assert.assertArrayEquals(new int[]{1, 2}, original);
+
+    }
 }
