@@ -21,9 +21,18 @@ public class Solution {
 
     public int romanToInt(String s) {
 
-        if(s.length() == 1) return symbolToValue.get(s);
+        if (s.length() == 1) return symbolToValue.get(s);
+
+        int value = 0;
+
+        while (s.length() > 0) {
+            if (s.startsWith("I")) {
+                value += 1;
+                s = s.replaceFirst("I", "");
+            }
+        }
 
 
-        return 0;
+        return value;
     }
 }
