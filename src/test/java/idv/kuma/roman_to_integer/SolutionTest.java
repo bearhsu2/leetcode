@@ -94,6 +94,11 @@ public class SolutionTest {
         runAndCheck(99, "XCIX");
     }
 
+    @Test
+    public void When_C_Then_100() throws Exception {
+        runAndCheck(100, "C");
+    }
+
 //    @Test
 //    public void When_MCMXCIV_Then_1994() throws Exception {
 //        runAndCheck(1994, "MCMXCIV");

@@ -28,6 +28,8 @@ public class Solution {
         this.value = 0;
 
 
+        process("C", 100);
+
         process("XC", 90);
         process("L", 50);
         process("XL", 40);
