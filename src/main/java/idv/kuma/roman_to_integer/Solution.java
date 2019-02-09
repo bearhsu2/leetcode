@@ -28,6 +28,11 @@ public class Solution {
         this.value = 0;
 
 
+        process("CM", 900);
+        process("D", 500);
+        process("CD", 400);
+        process("CCC", 300);
+        process("CC", 200);
         process("C", 100);
 
         process("XC", 90);

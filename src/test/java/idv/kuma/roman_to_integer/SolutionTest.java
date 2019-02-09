@@ -99,6 +99,21 @@ public class SolutionTest {
         runAndCheck(100, "C");
     }
 
+    @Test
+    public void When_CCCXLV_Then_345() throws Exception {
+        runAndCheck(345, "CCCXLV");
+    }
+    @Test
+    public void When_DCCLXVIII_Then_768() throws Exception {
+        runAndCheck(768, "DCCLXVIII");
+    }
+
+
+    @Test
+    public void When_DCCLXVIII_Then_999() throws Exception {
+        runAndCheck(999, "CMXCIX");
+    }
+
 //    @Test
 //    public void When_MCMXCIV_Then_1994() throws Exception {
 //        runAndCheck(1994, "MCMXCIV");
