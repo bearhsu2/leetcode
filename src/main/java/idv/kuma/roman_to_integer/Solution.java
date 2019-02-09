@@ -24,10 +24,18 @@ public class Solution {
 
     public int romanToInt(String sIn) {
 
-
         this.s = sIn;
         this.value = 0;
 
+
+        process("XC", 90);
+        process("L", 50);
+        process("XL", 40);
+        process("XXX", 30);
+        process("XX", 20);
+        process("X", 10);
+
+        process("IX", 9);
         process("V", 5);
         process("IV", 4);
         process("III", 3);
