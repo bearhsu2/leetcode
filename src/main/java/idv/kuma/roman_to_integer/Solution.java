@@ -24,14 +24,15 @@ public class Solution {
 
     public int romanToInt(String sIn) {
 
-        if (sIn.length() == 1) return symbolToValue.get(sIn);
 
         this.s = sIn;
         this.value = 0;
 
+        process("V", 5);
+        process("IV", 4);
         process("III", 3);
-
         process("II", 2);
+        process("I", 1);
 
 
         return value;

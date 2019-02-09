@@ -13,16 +13,15 @@ public class SolutionTest {
         solution = new Solution();
     }
 
-//    @Test
-//    public void When_V_Then_5() throws Exception {
-//        runAndCheck(5, "V");
-//    }
+    @Test
+    public void When_V_Then_5() throws Exception {
+        runAndCheck(5, "V");
+    }
 
     @Test
     public void When_III_Then_3() throws Exception {
         runAndCheck(3, "III");
     }
-
     @Test
     public void When_II_Then_2() throws Exception {
         runAndCheck(2, "II");
@@ -31,6 +30,11 @@ public class SolutionTest {
     @Test
     public void When_I_Then_1() throws Exception {
         runAndCheck(1, "I");
+    }
+
+    @Test
+    public void When_IV_Then_4() throws Exception {
+        runAndCheck(4, "IV");
     }
 
 
