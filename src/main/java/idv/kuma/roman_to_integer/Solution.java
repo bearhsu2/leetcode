@@ -36,8 +36,7 @@ public class Solution {
         process("III", 3);
         process("II", 2);
         process("I", 1);
-
-
+        
         return value;
     }
 
