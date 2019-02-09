@@ -1,31 +1,37 @@
 package idv.kuma.roman_to_integer;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class SolutionTest {
 
+    private Solution solution;
+
+    @Before
+    public void setUp() throws Exception {
+        solution = new Solution();
+    }
+
     @Test
     public void When_V_Then_5() throws Exception {
-        Solution solution = new Solution();
-
-        Assert.assertEquals(5, solution.romanToInt("V"));
+        runAndCheck(5, "V");
     }
 
     @Test
     public void When_III_Then_3() throws Exception {
-        Solution solution = new Solution();
-
-        Assert.assertEquals(3, solution.romanToInt("III"));
+        runAndCheck(3, "III");
     }
 
     @Test
     public void When_II_Then_2() throws Exception {
-        Solution solution = new Solution();
-
-        Assert.assertEquals(2, solution.romanToInt("II"));
+        runAndCheck(2, "II");
     }
 
+
+    private void runAndCheck(int expected, String s) {
+        Assert.assertEquals(expected, solution.romanToInt(s));
+    }
 
 
 //    Input: "III"
