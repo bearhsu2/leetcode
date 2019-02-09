@@ -18,25 +18,29 @@ public class Solution {
         symbolToValue.put("M", 1000);
     }
 
-
-    public int romanToInt(String s) {
-
-        if (s.length() == 1) return symbolToValue.get(s);
-
-        int value = 0;
+    String s = "";
+    int value;
 
 
-        if (s.startsWith("III")) {
-            value += 3;
-            s = s.replaceFirst("III", "");
-        }
+    public int romanToInt(String sIn) {
 
-        if (s.startsWith("II")) {
-            value += 2;
-            s = s.replaceFirst("II", "");
-        }
+        if (sIn.length() == 1) return symbolToValue.get(sIn);
+
+        this.s = sIn;
+        this.value = 0;
+
+        process("III", 3);
+
+        process("II", 2);
 
 
         return value;
+    }
+
+    private void process(String symbols, int delta) {
+        if (s.startsWith(symbols)) {
+            value += delta;
+            s = s.replaceFirst(symbols, "");
+        }
     }
 }
