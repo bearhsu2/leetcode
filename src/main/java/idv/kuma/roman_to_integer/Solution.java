@@ -28,6 +28,10 @@ public class Solution {
         this.value = 0;
 
 
+        process("MMM", 3000);
+        process("MM", 2000);
+        process("M", 1000);
+
         process("CM", 900);
         process("D", 500);
         process("CD", 400);

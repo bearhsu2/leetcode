@@ -114,10 +114,10 @@ public class SolutionTest {
         runAndCheck(999, "CMXCIX");
     }
 
-//    @Test
-//    public void When_MCMXCIV_Then_1994() throws Exception {
-//        runAndCheck(1994, "MCMXCIV");
-//    }
+    @Test
+    public void When_MCMXCIV_Then_1994() throws Exception {
+        runAndCheck(1994, "MCMXCIV");
+    }
 
 
 //
