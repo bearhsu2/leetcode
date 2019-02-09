@@ -19,6 +19,13 @@ public class SolutionTest {
         Assert.assertEquals(3, solution.romanToInt("III"));
     }
 
+    @Test
+    public void When_II_Then_2() throws Exception {
+        Solution solution = new Solution();
+
+        Assert.assertEquals(2, solution.romanToInt("II"));
+    }
+
 
 
 //    Input: "III"

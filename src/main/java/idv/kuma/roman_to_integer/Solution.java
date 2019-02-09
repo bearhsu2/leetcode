@@ -25,11 +25,15 @@ public class Solution {
 
         int value = 0;
 
-        while (s.length() > 0) {
-            if (s.startsWith("I")) {
-                value += 1;
-                s = s.replaceFirst("I", "");
-            }
+
+        if (s.startsWith("III")) {
+            value += 3;
+            s = s.replaceFirst("III", "");
+        }
+
+        if (s.startsWith("II")) {
+            value += 2;
+            s = s.replaceFirst("II", "");
         }
 
 
