@@ -14,6 +14,11 @@ public class SolutionTest {
     }
 
     @Test
+    public void When_empty_Then_0() throws Exception {
+        runAndCheck(0, "");
+    }
+
+    @Test
     public void When_V_Then_5() throws Exception {
         runAndCheck(5, "V");
     }
@@ -117,6 +122,11 @@ public class SolutionTest {
     @Test
     public void When_MCMXCIV_Then_1994() throws Exception {
         runAndCheck(1994, "MCMXCIV");
+    }
+
+    @Test
+    public void When_MMMCMXCIX_Then_3999() throws Exception {
+        runAndCheck(3999, "MMMCMXCIX");
     }
 
 
