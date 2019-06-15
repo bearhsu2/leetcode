@@ -1,4 +1,4 @@
-package idv.kuma.longest_common_prefix;
+package idv.kuma.easy.longest_common_prefix;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package idv.kuma.remove_duplicates_from_sorted_array;
+package idv.kuma.easy.remove_duplicates_from_sorted_array;
 
 
 class Solution {

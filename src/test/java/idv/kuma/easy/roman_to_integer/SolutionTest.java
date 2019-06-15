@@ -1,4 +1,4 @@
-package idv.kuma.roman_to_integer;
+package idv.kuma.easy.roman_to_integer;
 
 import org.junit.Assert;
 import org.junit.Before;
