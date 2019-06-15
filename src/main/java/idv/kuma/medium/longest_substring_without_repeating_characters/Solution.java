@@ -1,4 +1,4 @@
-package idv.kuma.easy.longest_substring_without_repeating_characters;
+package idv.kuma.medium.longest_substring_without_repeating_characters;
 
 import java.util.HashSet;
 import java.util.Set;
