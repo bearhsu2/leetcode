@@ -8,7 +8,11 @@ public class SolutionTest {
     @Test
     public void aaa_vvvb_Then_empty() {
 
-        Assert.assertEquals("", new Solution().longestCommonPrefix(new String[]{"aaa", "vvvb"}));
+        Assert.assertEquals("", createAndRun("aaa", "vvvb"));
 
+    }
+
+    private String createAndRun(String... strs) {
+        return new Solution().longestCommonPrefix(strs);
     }
 }
