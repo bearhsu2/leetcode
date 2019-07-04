@@ -1,70 +1,41 @@
 package idv.kuma.easy.merge_two_sorted_lists;
 
-public class Solution {
-    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+import java.util.*;
 
-        ListNode next1 = l1;
-        ListNode next2 = l2;
+public class Solution {
+    public ListNode mergeTwoLists(ListNode a, ListNode b) {
+
+        List<ListNode> listNodes = Arrays.asList(a, b);
 
         ListNode head = new ListNode(-999);
         ListNode current = head;
 
+        Set<ListNode> finishedNodes = new HashSet<>();
+
         while (true) {
+            Optional<ListNode> minNodeOpt = listNodes.stream()
+                    .filter(l -> l != null && !finishedNodes.contains(l))
+                    .min(Comparator.comparingInt(l -> l.val));
 
-            if (next1 != null && next2 != null) {
+            if (!minNodeOpt.isPresent()) break;
 
-                int val1 = next1.val;
-                int val2 = next2.val;
+            ListNode minNode = minNodeOpt.get();
 
-                if (val1 < val2) {
-                    ListNode newNode = new ListNode(val1);
+            ListNode newNode = new ListNode(minNode.val);
+            current.next = newNode;
+            current = current.next;
 
-                    current.next = newNode;
-                    current = current.next;
+            ListNode next = minNode.next;
 
-                    next1 = next1.next;
-                } else {
-
-                    ListNode newNode = new ListNode(val2);
-
-                    current.next = newNode;
-                    current = current.next;
-
-                    next2 = next2.next;
-
-                }
-
-
-            } else if (next1 == null && next2 != null) {
-
-                int val2 = next2.val;
-                ListNode newNode = new ListNode(val2);
-
-                current.next = newNode;
-                current = current.next;
-
-                next2 = next2.next;
-
-            } else if (next1 != null && next2 == null) {
-
-                int val1 = next1.val;
-                ListNode newNode = new ListNode(val1);
-
-                current.next = newNode;
-                current = current.next;
-
-                next1 = next1.next;
-
-
+            if (null == next) {
+                finishedNodes.add(minNode);
             } else {
-                break;
+                minNode.val = next.val;
+                minNode.next = next.next;
             }
-
         }
-
 
         return head.next;
     }
-
 
 }
