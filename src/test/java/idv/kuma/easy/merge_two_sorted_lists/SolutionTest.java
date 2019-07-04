@@ -25,21 +25,21 @@ public class SolutionTest {
 
     }
 
-//    @Test
-//    public void When_0_1_V_0_1_Then_0_0_1_1() {
-//
-//        Solution solution = new Solution();
-//
-//        ListNode l1 = createListNode(0, 1);
-//        ListNode l2 = createListNode(0, 1);
-//
-//
-//        ListNode listNode = solution.mergeTwoLists(l1, l2);
-//
-//        traceAndCheck(Arrays.asList(0), listNode);
-//
-//
-//    }
+    @Test
+    public void When_0_1_V_0_1_Then_0_0_1_1() {
+
+        Solution solution = new Solution();
+
+        ListNode l1 = createListNode(0, 1);
+        ListNode l2 = createListNode(0, 1);
+
+
+        ListNode listNode = solution.mergeTwoLists(l1, l2);
+
+        traceAndCheck(Arrays.asList(0, 0, 1, 1), listNode);
+
+
+    }
 
     private ListNode createListNode(int... values) {
         ListNode head = null;
