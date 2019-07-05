@@ -22,4 +22,12 @@ public class SolutionTest {
         runAndCheck(2, "hello", "ll");
 
     }
+
+
+    @Test
+    public void Given_hello_When_aaa_Then_Neg1() {
+
+        runAndCheck(-1, "hello", "aaa");
+
+    }
 }
