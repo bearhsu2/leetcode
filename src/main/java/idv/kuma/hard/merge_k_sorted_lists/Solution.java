@@ -12,7 +12,7 @@ public class Solution {
         List<ListNode> listNodes = Arrays.asList(lists);
 
 
-        ListNode reduce = listNodes.stream()
+        ListNode reduce = listNodes.parallelStream()
                 .filter(l -> l != null)
                 .reduce((a, b) -> mergeTwoLists(a, b))
                 .orElse(null);
