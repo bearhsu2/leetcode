@@ -8,15 +8,14 @@ public class SolutionTest {
     @Test
     public void When_Empty_Then_0() {
 
-        Solution solution = new Solution();
+        Assert.assertEquals(0, new Solution().strStr("aaabbbccc", ""));
 
-        int result = solution.strStr("aaabbbccc", "");
-
-        Assert.assertEquals(0, result);
-        
     }
 
     @Test
     public void Given_hello_When_ll_Then_2() {
+
+        Assert.assertEquals(2, new Solution().strStr("hello", "ll"));
+
     }
 }
