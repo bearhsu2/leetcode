@@ -30,17 +30,19 @@ public class SolutionTest {
     }
 
 
+
+    @Test
+    public void Given_1_3_5_6_When_7_Then_4() {
+
+        runAndTest(new int[]{1, 3, 5, 6}, 7, 4);
+    }
+
+
     private void runAndTest(int[] nums, int target, int expected) {
         Solution solution = new Solution();
         int result = solution.searchInsert(nums, target);
         Assert.assertEquals(expected, result);
     }
-
-
-
-//    Example 2:
-//    Input: [1,3,5,6], 2
-//    Output: 1
 
 
 //    Example 3:

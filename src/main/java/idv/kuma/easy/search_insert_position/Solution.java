@@ -10,7 +10,7 @@ class Solution {
 
         int arrayLength = nums.length;
 
-        return IntStream.rangeClosed(0, arrayLength)
+        return IntStream.range(0, arrayLength)
                 .filter(index -> nums[index] >= target)
                 .findFirst()
                 .orElse(nums.length);
