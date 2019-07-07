@@ -17,6 +17,13 @@ public class SolutionTest {
         runAndTest(new int[]{1, 2, 4, 5}, 3, 2);
     }
 
+    @Test
+    public void Given_1_3_5_6_When_5_Then_2() {
+
+        runAndTest(new int[]{1, 3, 5, 6}, 5, 2);
+    }
+
+
     private void runAndTest(int[] nums, int target, int expected) {
         Solution solution = new Solution();
         int result = solution.searchInsert(nums, target);
@@ -24,18 +31,18 @@ public class SolutionTest {
     }
 
 
-//    Input: [1,3,5,6], 5
-//    Output: 2
+
 //    Example 2:
-//
 //    Input: [1,3,5,6], 2
 //    Output: 1
+
+
 //    Example 3:
-//
 //    Input: [1,3,5,6], 7
 //    Output: 4
+
+
 //    Example 4:
-//
 //    Input: [1,3,5,6], 0
 //    Output: 0
 }
