@@ -23,6 +23,12 @@ public class SolutionTest {
         runAndTest(new int[]{1, 3, 5, 6}, 5, 2);
     }
 
+    @Test
+    public void Given_1_3_5_6_When_2_Then_1() {
+
+        runAndTest(new int[]{1, 3, 5, 6}, 2, 1);
+    }
+
 
     private void runAndTest(int[] nums, int target, int expected) {
         Solution solution = new Solution();
