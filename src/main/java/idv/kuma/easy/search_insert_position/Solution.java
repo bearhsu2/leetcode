@@ -6,14 +6,14 @@ public
 class Solution {
     public int searchInsert(int[] nums, int target) {
 
-        if (nums.length <= 0) return 0;
-
         int arrayLength = nums.length;
+
+        if (arrayLength <= 0) return 0;
 
         return IntStream.range(0, arrayLength)
                 .filter(index -> nums[index] >= target)
                 .findFirst()
-                .orElse(nums.length);
+                .orElse(arrayLength);
 
 
     }
