@@ -38,6 +38,11 @@ public class SolutionTest {
     }
 
 
+    @Test
+    public void Given_1_3_5_6_When_0_Then_0() {
+
+        runAndTest(new int[]{1, 3, 5, 6}, 0, 0);
+    }
     private void runAndTest(int[] nums, int target, int expected) {
         Solution solution = new Solution();
         int result = solution.searchInsert(nums, target);
@@ -45,12 +50,5 @@ public class SolutionTest {
     }
 
 
-//    Example 3:
-//    Input: [1,3,5,6], 7
-//    Output: 4
 
-
-//    Example 4:
-//    Input: [1,3,5,6], 0
-//    Output: 0
 }
