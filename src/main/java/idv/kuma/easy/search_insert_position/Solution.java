@@ -2,8 +2,7 @@ package idv.kuma.easy.search_insert_position;
 
 import java.util.stream.IntStream;
 
-public
-class Solution {
+public class Solution {
     public int searchInsert(int[] nums, int target) {
 
         int arrayLength = nums.length;
