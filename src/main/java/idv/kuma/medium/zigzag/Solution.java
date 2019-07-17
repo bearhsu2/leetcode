@@ -1,7 +1,6 @@
 package idv.kuma.medium.zigzag;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 class Solution {
@@ -17,7 +16,6 @@ class Solution {
             intermediate.add(new StringBuilder());
         }
 
-
         int i = 0;
         for (char oneChar : chars) {
 
@@ -31,7 +29,7 @@ class Solution {
         }
 
         StringBuilder result = new StringBuilder();
-        intermediate.forEach( stringBuilder -> {
+        intermediate.forEach(stringBuilder -> {
             result.append(stringBuilder);
         });
 

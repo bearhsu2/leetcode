@@ -11,4 +11,11 @@ public class SolutionTest {
 
         Assert.assertEquals("PAHNAPLSIIGYIR", new Solution().convert("PAYPALISHIRING", 3));
     }
+
+
+    @Test
+    public void When_PAYPALISHIRING_4_Then_PINALSIGYAHRPI() {
+
+        Assert.assertEquals("PINALSIGYAHRPI", new Solution().convert("PAYPALISHIRING", 4));
+    }
 }
