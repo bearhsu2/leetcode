@@ -6,6 +6,10 @@ import java.util.List;
 class Solution {
     public String convert(String s, int numRows) {
 
+        if (numRows == 1) return s;
+
+
+
 
         int direction = -1;
 
@@ -19,7 +23,7 @@ class Solution {
         int i = 0;
         for (char oneChar : chars) {
 
-            System.out.println("i = " + i);
+
 
             intermediate.get(i).append(oneChar);
 

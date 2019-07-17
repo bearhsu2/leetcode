@@ -18,4 +18,11 @@ public class SolutionTest {
 
         Assert.assertEquals("PINALSIGYAHRPI", new Solution().convert("PAYPALISHIRING", 4));
     }
+
+
+    @Test
+    public void When_AB_1_Then_AB() {
+
+        Assert.assertEquals("AB", new Solution().convert("AB", 1));
+    }
 }
