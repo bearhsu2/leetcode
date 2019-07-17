@@ -18,9 +18,12 @@ class Solution {
                     if (currentLength > longestLength) {
                         longestLength = currentLength;
                         longestSubstring = currentSubstring;
+                        if (i == 0 && j == s.length()) return longestSubstring;
                     }
 
                 }
+
+
             }
         }
 
