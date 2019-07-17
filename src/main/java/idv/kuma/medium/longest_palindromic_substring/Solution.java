@@ -7,10 +7,9 @@ class Solution {
         String longestSubstring = "";
 
         for (int i = 0; i < s.length(); i++) {
-            for (int j = i + 1; j <= s.length(); j++) {
 
-                if (j - i < longestLength) continue;
 
+            for (int j = i + longestLength + 1; j <= s.length(); j++) {
 
                 String currentSubstring = s.substring(i, j);
 
