@@ -7,10 +7,10 @@ public class SolutionTest {
 
     @Test
     public void _1_11() {
-        runAndCheck(1, 11);
+        runAndCheck(1, "11");
     }
 
-    private void runAndCheck(int n, int expectedResult) {
+    private void runAndCheck(int n, String expectedResult) {
         Assert.assertEquals(expectedResult, new Solution().countAndSay(n));
     }
 }
