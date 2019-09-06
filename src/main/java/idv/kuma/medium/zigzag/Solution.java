@@ -1,42 +1,21 @@
 package idv.kuma.medium.zigzag;
 
-import java.util.ArrayList;
-import java.util.List;
-
-class Solution {
+public class Solution {
     public String convert(String s, int numRows) {
 
         if (numRows == 1) return s;
 
+        StringBuilder ret = new StringBuilder();
+        int n = s.length();
+        int cycleLen = 2 * numRows - 2;
 
-
-
-        int direction = -1;
-
-        char[] chars = s.toCharArray();
-
-        List<StringBuilder> intermediate = new ArrayList<>();
         for (int i = 0; i < numRows; i++) {
-            intermediate.add(new StringBuilder());
+            for (int j = 0; j + i < n; j += cycleLen) {
+                ret.append(s.charAt(j + i));
+                if (i != 0 && i != numRows - 1 && j + cycleLen - i < n)
+                    ret.append(s.charAt(j + cycleLen - i));
+            }
         }
-
-        int i = 0;
-        for (char oneChar : chars) {
-
-
-
-            intermediate.get(i).append(oneChar);
-
-            if (i == numRows - 1 || i == 0) direction *= -1;
-
-            i += direction;
-        }
-
-        StringBuilder result = new StringBuilder();
-        intermediate.forEach(stringBuilder -> {
-            result.append(stringBuilder);
-        });
-
-        return result.toString();
+        return ret.toString();
     }
 }
