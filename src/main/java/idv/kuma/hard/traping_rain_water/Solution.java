@@ -4,39 +4,45 @@ public class Solution {
 
 
     public int trap(int[] heights) {
-
         int volume = 0;
 
+        int tallest = findTallest(heights);
 
-        // search left to right
+        // search from 0 to tallest
         int left = 0;
-
-        while (true) {
-            int nextTaller = findNextTallerFromLeft(heights, left);
-            if (nextTaller < 0) {
-                break;
-            }
+        while (left < tallest) {
+            int nextTaller = findNextTallerFromLeft(heights, left, tallest);
             volume += calculateWaterFromLeft(heights, left, nextTaller);
             left = nextTaller;
         }
 
-        // search right to left
+        // search last to tallest
         int right = heights.length - 1;
-
-
-        while (true) {
-            int nextTaller = findNextTallerFromRight(heights, right, left);
-
-            if (nextTaller < 0) {
-                break;
-            }
-
+        while (right > tallest) {
+            int nextTaller = findNextTallerFromRight(heights, right, tallest);
             volume += calculateWaterFromRight(heights, right, nextTaller);
             right = nextTaller;
         }
 
         return volume;
 
+    }
+
+    private int findTallest(int[] heights) {
+
+        int max = Integer.MIN_VALUE;
+        int index = Integer.MIN_VALUE;
+
+        for (int i = 0; i < heights.length; i++) {
+            int height = heights[i];
+
+            if (height > max) {
+                index = i;
+                max = height;
+            }
+        }
+
+        return index;
     }
 
     private int calculateWaterFromRight(int[] heights, int right, int nextTaller) {
@@ -51,9 +57,9 @@ public class Solution {
 
     }
 
-    private int findNextTallerFromRight(int[] heights, int right, int left) {
+    private int findNextTallerFromRight(int[] heights, int right, int tallest) {
 
-        for (int i = right - 1; i >= 0 && i >= left; i--) {
+        for (int i = right - 1; i >= 0 && i >= tallest; i--) {
             if (heights[i] >= heights[right]) {
                 return i;
             }
@@ -73,9 +79,9 @@ public class Solution {
         return volume;
     }
 
-    private int findNextTallerFromLeft(int[] heights, int left) {
+    private int findNextTallerFromLeft(int[] heights, int left, int tallest) {
 
-        for (int i = left + 1; i < heights.length; i++) {
+        for (int i = left + 1; i < heights.length && i <= tallest; i++) {
             if (heights[i] >= heights[left]) {
                 return i;
             }
