@@ -4,6 +4,11 @@ public class Solution {
 
 
     public int trap(int[] heights) {
+
+        if (heights.length<=0) {
+            return 0;
+        }
+
         int volume = 0;
 
         int tallest = findTallest(heights);
