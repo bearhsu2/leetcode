@@ -8,10 +8,7 @@ import java.util.stream.Collectors;
 
 public class Solution {
     public List<List<Integer>> permute(int[] nums) {
-
-        List<Integer> list = Arrays.stream(nums).boxed().collect(Collectors.toList());
-
-        return doPermute(list);
+        return doPermute(Arrays.stream(nums).boxed().collect(Collectors.toList()));
 
     }
 
@@ -20,17 +17,14 @@ public class Solution {
             return Collections.singletonList(list);
         }
 
-
         List<List<Integer>> result = new ArrayList<>();
 
         for (int i = 0; i < list.size(); i++) {
 
-            List<Integer> subListExcludeI = excludeI(list, i);
-
-            List<List<Integer>> permutedSubLists = doPermute(subListExcludeI);
+            List<List<Integer>> permutedSubLists = doPermute(excludeI(list, i));
 
             for (List<Integer> permuted : permutedSubLists) {
-                permuted.add(0, list.get(i));
+                permuted.add(list.get(i));
             }
 
             result.addAll(permutedSubLists);
@@ -42,13 +36,9 @@ public class Solution {
 
     private List<Integer> excludeI(List<Integer> list, int excludedIndex) {
 
-        List<Integer> result = new ArrayList<>();
+        List<Integer> result = new ArrayList<>(list);
 
-        for (int i = 0; i < list.size(); i++) {
-            if (i != excludedIndex) {
-                result.add(list.get(i));
-            }
-        }
+        result.remove(excludedIndex);
 
         return result;
     }
