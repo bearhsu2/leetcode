@@ -8,6 +8,7 @@ public class Solution {
     public boolean wordPattern(String patternInput, String stringInput) {
 
         Map<Character, String> patternToString = new HashMap<>();
+        Map<String, Character> stringToPattern = new HashMap<>();
 
         char[] patterns = patternInput.toCharArray();
 
@@ -23,15 +24,19 @@ public class Solution {
             char pattern = patterns[i];
             String string = strings[i];
             String existingString = patternToString.get(pattern);
+            Character existingPattern = stringToPattern.get(string);
 
-
-            if (Objects.isNull(existingString)) {
-                patternToString.put(pattern, string);
-            } else {
-                if (!existingString.equals(string)) {
-                    return false;
-                }
+            if (!Objects.isNull(existingString) && !existingString.equals(string)) {
+                return false;
             }
+
+            if (!Objects.isNull(existingPattern) && !existingPattern.equals(pattern)) {
+                return false;
+            }
+
+            patternToString.put(pattern, string);
+            stringToPattern.put(string, pattern);
+
 
         }
 
