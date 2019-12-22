@@ -24,10 +24,11 @@ public class Solution {
             String string = strings[i];
             String existingString = patternToString.get(pattern);
 
+
             if (Objects.isNull(existingString)) {
                 patternToString.put(pattern, string);
             } else {
-                if (!existingString.equals(strings[i])) {
+                if (!existingString.equals(string)) {
                     return false;
                 }
             }
