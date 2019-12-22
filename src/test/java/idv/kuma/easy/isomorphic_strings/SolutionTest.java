@@ -6,7 +6,7 @@ import org.junit.Test;
 public class SolutionTest {
 
     @Test
-    public void When_egg_add_Then_True() {
+    public void When_egg_add_Then_true() {
         runAndCheck("egg", "add", true);
     }
 
