@@ -8,14 +8,12 @@ public class SolutionTest {
     @Test
     public void When_abba_With_dog_cat_cat_dog_Then_true() {
 
-        Solution solution = new Solution();
+        runAndCheck("abba", "dog cat cat dog", true);
 
-        String pattern = "abba";
-        String str = "dog cat cat dog";
-        boolean actual = solution.wordPattern(pattern, str);
-
-        Assert.assertEquals(true, actual);
+    }
 
 
+    private void runAndCheck(String pattern, String string, boolean expected) {
+        Assert.assertEquals(expected, new Solution().wordPattern(pattern, string));
     }
 }
