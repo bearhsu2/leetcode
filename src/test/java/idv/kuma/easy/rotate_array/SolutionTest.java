@@ -7,6 +7,16 @@ public class SolutionTest {
 
 
     @Test
+    public void _1_2_1() {
+
+
+        int[] nums = {1};
+
+        new Solution().rotate(nums, 2);
+
+        Assertions.assertThat(nums).containsSequence(1);
+    }
+    @Test
     public void _1239_2_3912() {
 
 

@@ -19,7 +19,7 @@ public class Solution {
             nums[(i + 1) % length] = nums[i];
         }
 
-        nums[1] = template;
+        nums[(1 % length)] = template;
 
     }
 }
