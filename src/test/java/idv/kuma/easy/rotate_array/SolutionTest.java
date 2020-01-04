@@ -5,6 +5,19 @@ import org.junit.Test;
 
 public class SolutionTest {
 
+
+    @Test
+    public void _1239_2_3912() {
+
+
+        int[] nums = {1, 2, 3, 9};
+
+        new Solution().rotate(nums, 2);
+
+        Assertions.assertThat(nums).containsSequence(3, 9, 1, 2);
+    }
+
+
     @Test
     public void _1234567_3_4567123() {
 
@@ -12,6 +25,6 @@ public class SolutionTest {
 
         new Solution().rotate(nums, 3);
 
-        Assertions.assertThat(nums).containsSequence(4, 5, 6, 7, 1, 2, 3);
+        Assertions.assertThat(nums).containsSequence(5, 6, 7, 1, 2, 3, 4);
     }
 }
