@@ -7,7 +7,7 @@ public class SolutionTest {
 
 
     @Test
-    public void _1_2_1() {
+    public void _1_1_1() {
 
 
         int[] nums = {1};

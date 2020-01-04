@@ -1,11 +1,32 @@
 package idv.kuma.easy.rotate_array;
 
+import java.util.Arrays;
+
 public class Solution {
     public void rotate(int[] nums, int k) {
 
-        for (int i = 0; i < k; i++) {
-            doRotate(nums);
+        int length = nums.length;
+
+        k = k % length;
+
+
+        int edge = length - k;
+        int[] tail = Arrays.copyOfRange(nums, edge, length);
+        int[] head = Arrays.copyOfRange(nums, 0, edge);
+
+
+        int i = 0;
+
+        for (int element : tail) {
+            nums[i] = element;
+            i++;
         }
+
+        for (int element : head) {
+            nums[i] = element;
+            i++;
+        }
+        System.out.println("aa");
 
     }
 
