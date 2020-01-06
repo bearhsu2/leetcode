@@ -9,7 +9,6 @@ public class Solution {
 
         k = k % length;
 
-
         int edge = length - k;
         int[] tail = Arrays.copyOfRange(nums, edge, length);
         int[] head = Arrays.copyOfRange(nums, 0, edge);
@@ -26,7 +25,6 @@ public class Solution {
             nums[i] = element;
             i++;
         }
-        System.out.println("aa");
 
     }
 
