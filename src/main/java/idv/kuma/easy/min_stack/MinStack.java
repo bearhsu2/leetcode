@@ -1,11 +1,12 @@
 package idv.kuma.easy.min_stack;
 
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.TreeMap;
 
 public class MinStack {
 
-    private final Stack<Integer> stack;
+    private final Deque<Integer> stack;
 
     private final TreeMap<Integer, Integer> valueToTimes;
 
@@ -14,7 +15,7 @@ public class MinStack {
      * initialize your data structure here.
      */
     public MinStack() {
-        this.stack = new Stack<>();
+        this.stack = new ArrayDeque<>();
         this.valueToTimes = new TreeMap<>();
     }
 
