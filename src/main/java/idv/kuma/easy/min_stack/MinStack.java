@@ -21,12 +21,7 @@ public class MinStack {
 
     public void push(int value) {
 
-        Integer times = valueToTimes.get(value);
-        if (times == null) {
-            valueToTimes.put(value, 1);
-        } else {
-            valueToTimes.put(value, times + 1);
-        }
+        valueToTimes.merge(value, 1, Integer::sum);
 
         this.stack.push(value);
     }
