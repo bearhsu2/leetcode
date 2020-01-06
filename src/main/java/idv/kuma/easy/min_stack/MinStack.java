@@ -1,28 +1,60 @@
 package idv.kuma.easy.min_stack;
 
+import java.util.Stack;
+import java.util.TreeMap;
+
 public class MinStack {
 
-    /** initialize your data structure here. */
+    private final Stack<Integer> stack;
+
+    private final TreeMap<Integer, Integer> valueToTimes;
+
+
+    /**
+     * initialize your data structure here.
+     */
     public MinStack() {
-
+        this.stack = new Stack<>();
+        this.valueToTimes = new TreeMap<>();
     }
 
-    public void push(int x) {
 
+    public void push(int value) {
+
+        Integer times = valueToTimes.get(value);
+        if (times == null) {
+            valueToTimes.put(value, 1);
+        } else {
+            valueToTimes.put(value, times + 1);
+        }
+
+        this.stack.push(value);
     }
+
 
     public void pop() {
 
+
+        Integer popped = this.stack.pop();
+
+        Integer times = valueToTimes.get(popped);
+
+        if (times <= 1) {
+            valueToTimes.remove(popped);
+        } else {
+            valueToTimes.put(popped, times - 1);
+        }
     }
+
 
     public int top() {
-
-        return 0;
+        return this.stack.peek();
     }
+
 
     public int getMin() {
 
-        return 0;
+        return this.valueToTimes.firstKey();
     }
 }
 
