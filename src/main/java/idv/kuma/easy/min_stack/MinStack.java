@@ -1,56 +1,55 @@
 package idv.kuma.easy.min_stack;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.TreeMap;
+import java.util.AbstractMap;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class MinStack {
 
-    private final Deque<Integer> stack;
 
-    private final TreeMap<Integer, Integer> valueToTimes;
+    private final List<Map.Entry<Integer, Integer>> valueToCurrentMinList;
 
 
     /**
      * initialize your data structure here.
      */
     public MinStack() {
-        this.stack = new ArrayDeque<>();
-        this.valueToTimes = new TreeMap<>();
+        this.valueToCurrentMinList = new ArrayList<>();
     }
 
 
     public void push(int value) {
+        int currentMin = this.getMin();
 
-        valueToTimes.merge(value, 1, Integer::sum);
-
-        this.stack.push(value);
-    }
-
-
-    public void pop() {
-
-
-        Integer popped = this.stack.pop();
-
-        Integer times = valueToTimes.get(popped);
-
-        if (times <= 1) {
-            valueToTimes.remove(popped);
-        } else {
-            valueToTimes.put(popped, times - 1);
-        }
-    }
+        this.valueToCurrentMinList.add(
+                new AbstractMap.SimpleEntry<>(
+                        value,
+                        Math.min(currentMin, value))
+        );
 
 
-    public int top() {
-        return this.stack.peek();
     }
 
 
     public int getMin() {
 
-        return this.valueToTimes.firstKey();
+        if (valueToCurrentMinList.isEmpty()) {
+            return Integer.MAX_VALUE;
+        } else {
+            return valueToCurrentMinList.get(valueToCurrentMinList.size() - 1).getValue();
+        }
+
+    }
+
+
+    public void pop() {
+        this.valueToCurrentMinList.remove(valueToCurrentMinList.size() - 1);
+    }
+
+
+    public int top() {
+        return this.valueToCurrentMinList.get(valueToCurrentMinList.size() - 1).getKey();
     }
 }
 
