@@ -2,24 +2,30 @@ package idv.kuma.easy.two_sum;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class Solution {
     public int[] twoSum(int[] nums, int target) {
 
-        Map<Integer, Integer> numberIndexMap = new HashMap<>();
-        int[] result = new int[2];
-        for (int i = 0; i < nums.length; i++){
-            int number = nums[i];
+        Map<Integer, Integer> valueToIndex = new HashMap<>();
 
-            if (numberIndexMap.containsKey(target - number)){
-                result[0] = numberIndexMap.get(target - number);
-                result[1] = i;
-                break;
+        int[] result = new int[]{-1, -1};
+
+        for (int newI = 0; newI < nums.length; newI++) {
+
+            int value = nums[newI];
+
+            Integer existingI = valueToIndex.get(target - value);
+
+            if (Objects.isNull(existingI)) {
+                valueToIndex.put(value, newI);
             } else {
-                numberIndexMap.put(number, i);
+                result[0] = existingI;
+                result[1] = newI;
+                break;
             }
-
         }
+
 
         return result;
     }
