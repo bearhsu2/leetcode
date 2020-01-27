@@ -13,30 +13,26 @@ public class Solution {
 
         Map<Character, Integer> characterToCount = new HashMap<>();
 
-
         // phase 1: iterate s
         for (char c : s.toCharArray()) {
-
             Integer count = characterToCount.get(c);
-
             if (Objects.isNull(count)) {
-                characterToCount.put(c, 1);
-            } else {
-                characterToCount.put(c, count + 1);
+                characterToCount.put(c, 0);
+                count = 0;
             }
-
+            characterToCount.put(c, count + 1);
         }
 
         // phase 2: iterate t
         for (char c : t.toCharArray()) {
 
             Integer count = characterToCount.get(c);
-
             if (Objects.isNull(count)) {
-                characterToCount.put(c, -1);
-            } else {
-                characterToCount.put(c, count - 1);
+                characterToCount.put(c, 0);
+                count = 0;
             }
+
+            characterToCount.put(c, count - 1);
 
         }
 
