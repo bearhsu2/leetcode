@@ -2,7 +2,6 @@ package idv.kuma.easy.valid_anagram;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 public class Solution {
     public boolean isAnagram(String s, String t) {
@@ -15,24 +14,36 @@ public class Solution {
 
         char[] sChars = s.toCharArray();
         char[] tChars = t.toCharArray();
-        for (int i = 0; i < sChars.length; i++) {
-            adjustMap(characterToCount, sChars[i], 1);
-            adjustMap(characterToCount, tChars[i], -1);
+        for (char sChar : sChars) {
+            adjustMap(characterToCount, sChar);
         }
 
-        // check if map contains only 0
-        return characterToCount.values()
-                .stream()
-                .allMatch(count -> count == 0);
+
+        for (char tChar : tChars) {
+            Integer count = characterToCount.get(tChar);
+
+            if (count == null || count == 0) {
+                return false;
+            }
+
+            characterToCount.put(tChar, count - 1);
+
+
+        }
+
+
+        return true;
     }
 
 
-    private void adjustMap(Map<Character, Integer> characterToCount, char c, int adjustment) {
+    private void adjustMap(Map<Character, Integer> characterToCount, char c) {
         Integer count = characterToCount.get(c);
-        if (Objects.isNull(count)) {
+        if (count == null) {
             characterToCount.put(c, 0);
             count = 0;
         }
-        characterToCount.put(c, count + adjustment);
+
+        characterToCount.put(c, count + 1);
+
     }
 }
