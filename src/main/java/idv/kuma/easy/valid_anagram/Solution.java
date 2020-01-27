@@ -13,27 +13,12 @@ public class Solution {
 
         Map<Character, Integer> characterToCount = new HashMap<>();
 
-//        char[] sChars = s.toCharArray();
-//        char[] tChars = t.toCharArray();
-
-        // phase 1: iterate s
-//        for (int i = 0; i < sChars.length; i++) {
-//
-//
-//
-//
-//        }
-
-
-        for (char c : s.toCharArray()) {
-            adjustMap(characterToCount, c, 1);
+        char[] sChars = s.toCharArray();
+        char[] tChars = t.toCharArray();
+        for (int i = 0; i < sChars.length; i++) {
+            adjustMap(characterToCount, sChars[i], 1);
+            adjustMap(characterToCount, tChars[i], -1);
         }
-
-        // phase 2: iterate t
-        for (char c : t.toCharArray()) {
-            adjustMap(characterToCount, c, -1);
-        }
-
 
         // check if map contains only 0
         return characterToCount.values()
