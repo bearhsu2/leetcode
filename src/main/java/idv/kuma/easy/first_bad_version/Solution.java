@@ -10,18 +10,14 @@ public class Solution extends VersionControl {
         while (low < high) {
 
 
-            long middleLongValue = (0L + low + high) / 2;
-
-            int middle = (int) middleLongValue;
+            int middle = low + (high - low) / 2;
 
             boolean middleIsBad = isBadVersion(middle);
             if (middleIsBad) {
                 high = middle;
             } else {
                 low = middle + 1;
-
             }
-
 
         }
 
