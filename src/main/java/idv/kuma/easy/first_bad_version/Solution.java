@@ -7,20 +7,16 @@ public class Solution extends VersionControl {
         int low = 1;
         int high = n;
 
-        while (low <= high) {
+        while (low < high) {
 
 
-            double middleDoubleValue = (0D + low + high) / 2;
+            long middleLongValue = (0L + low + high) / 2;
 
-            int middle = (int) middleDoubleValue;
+            int middle = (int) middleLongValue;
 
             boolean middleIsBad = isBadVersion(middle);
             if (middleIsBad) {
-                if (middle == 1 || !isBadVersion(middle - 1)) {
-                    return middle;
-                } else {
-                    high = middle - 1;
-                }
+                high = middle;
             } else {
                 low = middle + 1;
 
@@ -29,7 +25,7 @@ public class Solution extends VersionControl {
 
         }
 
-        return Integer.MIN_VALUE;
+        return low;
 
     }
 }
