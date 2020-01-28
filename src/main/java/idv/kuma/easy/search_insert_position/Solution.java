@@ -3,8 +3,6 @@ package idv.kuma.easy.search_insert_position;
 public class Solution {
     public int searchInsert(int[] nums, int target) {
 
-//        System.out.println("===========================================");
-
         int arrayLength = nums.length;
 
         if (arrayLength <= 0) return 0;
@@ -17,9 +15,6 @@ public class Solution {
 
 
             int middle = (low + high) / 2;
-
-//            System.out.println("low = " + low + ", middle = " + middle + ", high = " + high);
-
 
             int middleValue = nums[middle];
             if (middleValue == target) {
