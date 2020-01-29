@@ -18,7 +18,7 @@ class Solution {
 
 
             iterator.next = nextNode;
-            iterator = iterator.next;
+            iterator = nextNode;
         }
 
         return head;

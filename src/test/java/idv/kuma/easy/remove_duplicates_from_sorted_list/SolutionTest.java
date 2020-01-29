@@ -3,9 +3,6 @@ package idv.kuma.easy.remove_duplicates_from_sorted_list;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class SolutionTest {
 
 //    Input: 1->1->2
@@ -19,7 +16,7 @@ public class SolutionTest {
 
         new Solution().deleteDuplicates(head);
 
-        Assertions.assertThat(allValues(head)).containsExactly(1, 2);
+        Assertions.assertThat(head.allValues()).containsExactly(1, 2);
 
 
     }
@@ -42,25 +39,6 @@ public class SolutionTest {
     }
 
 
-    private List<Integer> allValues(ListNode head) {
-
-        List<Integer> result = new ArrayList<>();
-
-        ListNode iterator = head;
-
-        while (iterator != null) {
-
-            result.add(iterator.val);
-
-            iterator = iterator.next;
-        }
-
-
-        return result;
-
-    }
-
-
     @Test
     public void _2() {
 
@@ -68,7 +46,7 @@ public class SolutionTest {
 
         new Solution().deleteDuplicates(head);
 
-        Assertions.assertThat(allValues(head)).containsExactly(2);
+        Assertions.assertThat(head.allValues()).containsExactly(2);
 
 
     }
@@ -81,7 +59,7 @@ public class SolutionTest {
 
         new Solution().deleteDuplicates(head);
 
-        Assertions.assertThat(allValues(head)).containsExactly(1, 2);
+        Assertions.assertThat(head.allValues()).containsExactly(1, 2);
 
 
     }
