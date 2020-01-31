@@ -1,41 +1,32 @@
 package idv.kuma.easy.merge_two_sorted_lists;
 
-import java.util.*;
-
 public class Solution {
-    public ListNode mergeTwoLists(ListNode a, ListNode b) {
+    public ListNode mergeTwoLists(ListNode l, ListNode r) {
 
-        List<ListNode> listNodes = Arrays.asList(a, b);
+        ListNode dummyHead = new ListNode(-999);
+        ListNode iterator = dummyHead;
 
-        ListNode head = new ListNode(-999);
-        ListNode current = head;
+        while (l != null && r != null) {
 
-        Set<ListNode> finishedNodes = new HashSet<>();
+            if (l.val < r.val) {
+                iterator.next = l;
+                l = l.next;
 
-        while (true) {
-            Optional<ListNode> minNodeOpt = listNodes.stream()
-                    .filter(l -> l != null && !finishedNodes.contains(l))
-                    .min(Comparator.comparingInt(l -> l.val));
-
-            if (!minNodeOpt.isPresent()) break;
-
-            ListNode minNode = minNodeOpt.get();
-
-            ListNode newNode = new ListNode(minNode.val);
-            current.next = newNode;
-            current = current.next;
-
-            ListNode next = minNode.next;
-
-            if (null == next) {
-                finishedNodes.add(minNode);
             } else {
-                minNode.val = next.val;
-                minNode.next = next.next;
+                iterator.next = r;
+                r = r.next;
             }
+
+            iterator = iterator.next;
         }
 
-        return head.next;
+
+        iterator.next = (l == null)
+                ? r
+                : l;
+
+
+        return dummyHead.next;
     }
 
 }
