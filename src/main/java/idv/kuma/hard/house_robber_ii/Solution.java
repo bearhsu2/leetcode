@@ -1,4 +1,4 @@
-package idv.kuma.hard.house_robber_II;
+package idv.kuma.hard.house_robber_ii;
 
 public class Solution {
     public int rob(int[] nums) {
