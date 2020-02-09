@@ -5,9 +5,8 @@ class Solution {
 
 
         int length = s.length();
-        if (length <= 1) {
-            return s;
-        }
+        if (length <= 1) return s;
+
 
         char[] chars = s.toCharArray();
         String currentLongestPalindrome = null;
@@ -21,7 +20,7 @@ class Solution {
         }
 
 
-        for (int tryLength = 2; tryLength <= length && tryLength > currentLongestPalindrome.length(); tryLength++) {
+        for (int tryLength = 2; tryLength <= length; tryLength++) {
 
             for (int i = 0; i < length; i++) {
                 int j = i + tryLength - 1;
@@ -32,11 +31,7 @@ class Solution {
                         currentLongestPalindrome = s.substring(i, i + tryLength);
                     }
                 }
-
-
             }
-
-
         }
 
         return currentLongestPalindrome;
