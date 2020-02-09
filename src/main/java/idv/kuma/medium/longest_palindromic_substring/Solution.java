@@ -3,48 +3,55 @@ package idv.kuma.medium.longest_palindromic_substring;
 class Solution {
     public String longestPalindrome(String s) {
 
-        int longestLength = 0;
-        String longestSubstring = "";
 
-        for (int i = 0; i < s.length(); i++) {
+        int length = s.length();
+        if (length <= 1) {
+            return s;
+        }
+
+        char[] chars = s.toCharArray();
+        String currentLongestPalindrome = null;
+
+        boolean[][] isPalindrome = new boolean[length][length];
+
+        for (int i = 0; i < length; i++) {
+            isPalindrome[i][i] = true;
+            currentLongestPalindrome = s.substring(i, i + 1);
 
 
-            for (int j = i + longestLength + 1; j <= s.length(); j++) {
+        }
+        for (int i = 0; i < length - 1; i++) {
 
-                String currentSubstring = s.substring(i, j);
+            if (chars[i] == chars[i + 1]) {
+                isPalindrome[i][i + 1] = true;
+                currentLongestPalindrome = s.substring(i, i + 2);
+            }
+        }
 
-                if (isPallindromic(currentSubstring)) {
+        for (int tryLength = 3; tryLength <= length; tryLength++) {
 
-                    int currentLength = currentSubstring.length();
-                    if (currentLength > longestLength) {
-                        longestLength = currentLength;
-                        longestSubstring = currentSubstring;
-                        if (i == 0 && j == s.length()) return longestSubstring;
+
+            for (int i = 0; i < length; i++) {
+                int j = i + tryLength - 1;
+
+
+                if (j < length) {
+                    isPalindrome[i][j] =
+                            isPalindrome[i + 1][j - 1]
+                                    && chars[i] == chars[j];
+                    if (isPalindrome[i][j]) {
+                        currentLongestPalindrome = s.substring(i, j + 1);
                     }
-
                 }
 
 
             }
+
+
         }
 
-        return longestSubstring;
-    }
+        return currentLongestPalindrome;
 
-    boolean isPallindromic(String s) {
-
-        int i = 0;
-        int j = s.length() - 1;
-
-        while (i < j) {
-            if (s.charAt(i) != s.charAt(j)) {
-                return false;
-            }
-            i++;
-            j--;
-        }
-
-        return true;
 
     }
 }

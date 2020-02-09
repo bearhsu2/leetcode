@@ -28,14 +28,14 @@ public class SolutionTest {
     @Test
     public void When_abba_Then_abba() {
 
-        Assert.assertEquals("a", new Solution().longestPalindrome("ab"));
+        Assert.assertEquals("abba", new Solution().longestPalindrome("abba"));
     }
 
 
     @Test
     public void When_abbab_Then_abba() {
 
-        Assert.assertEquals("a", new Solution().longestPalindrome("ab"));
+        Assert.assertEquals("abba", new Solution().longestPalindrome("abbab"));
     }
 
 
@@ -64,6 +64,13 @@ public class SolutionTest {
 
 
     @Test
+    public void When_aaabbbaaa_Then_aaabbbaaa() {
+
+        String s = "aaabbbaaa";
+        Assert.assertEquals(s, new Solution().longestPalindrome(s + "a"));
+    }
+
+    @Test
     public void When_SpecialStringA_Then_SpecialString() {
 
         String s = makeSpecialString();
@@ -78,16 +85,4 @@ public class SolutionTest {
         return sb.toString();
     }
 
-    @Test
-    public void Test_isPallindromic() {
-
-        Assert.assertTrue(new Solution().isPallindromic("a"));
-        Assert.assertTrue(new Solution().isPallindromic("aba"));
-        Assert.assertTrue(new Solution().isPallindromic("abba"));
-        Assert.assertTrue(new Solution().isPallindromic("aabcbaa"));
-        Assert.assertTrue(new Solution().isPallindromic("abccba"));
-
-        Assert.assertFalse(new Solution().isPallindromic("aabcba"));
-        Assert.assertFalse(new Solution().isPallindromic("aabcbffa"));
-    }
 }
