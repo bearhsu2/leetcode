@@ -3,16 +3,13 @@ package idv.kuma.medium.longest_palindromic_substring;
 class Solution {
     public String longestPalindrome(String s) {
 
-
         int length = s.length();
         if (length <= 1) return s;
-
 
         char[] chars = s.toCharArray();
         String longest = null;
 
         boolean[][] isPalindrome = new boolean[length][length];
-
 
         for (int tryLength = 1; tryLength <= length; tryLength++) {
 
