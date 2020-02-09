@@ -9,13 +9,13 @@ class Solution {
 
 
         char[] chars = s.toCharArray();
-        String currentLongestPalindrome = null;
+        String longest = null;
 
         boolean[][] isPalindrome = new boolean[length][length];
 
         for (int i = 0; i < length; i++) {
             isPalindrome[i][i] = true;
-            currentLongestPalindrome = s.substring(i, i + 1);
+            longest = s.substring(i, i + 1);
 
         }
 
@@ -28,13 +28,13 @@ class Solution {
                 if (j < length) {
                     if ((tryLength <= 3 || isPalindrome[i + 1][j - 1]) && chars[i] == chars[j]) {
                         isPalindrome[i][j] = true;
-                        currentLongestPalindrome = s.substring(i, i + tryLength);
+                        longest = s.substring(i, i + tryLength);
                     }
                 }
             }
         }
 
-        return currentLongestPalindrome;
+        return longest;
 
 
     }
