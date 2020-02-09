@@ -22,7 +22,7 @@ public class SolutionTest {
     @Test
     public void When_ab_Then_a() {
 
-        Assert.assertEquals("a", new Solution().longestPalindrome("ab"));
+        Assert.assertEquals("b", new Solution().longestPalindrome("ab"));
     }
 
     @Test

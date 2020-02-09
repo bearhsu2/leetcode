@@ -18,8 +18,8 @@ class Solution {
             isPalindrome[i][i] = true;
             currentLongestPalindrome = s.substring(i, i + 1);
 
-
         }
+
         for (int i = 0; i < length - 1; i++) {
 
             if (chars[i] == chars[i + 1]) {
@@ -28,7 +28,7 @@ class Solution {
             }
         }
 
-        for (int tryLength = 3; tryLength <= length; tryLength++) {
+        for (int tryLength = 3; tryLength <= length && tryLength > currentLongestPalindrome.length(); tryLength++) {
 
 
             for (int i = 0; i < length; i++) {
@@ -40,7 +40,7 @@ class Solution {
                             isPalindrome[i + 1][j - 1]
                                     && chars[i] == chars[j];
                     if (isPalindrome[i][j]) {
-                        currentLongestPalindrome = s.substring(i, j + 1);
+                        currentLongestPalindrome = s.substring(i, i + tryLength);
                     }
                 }
 
