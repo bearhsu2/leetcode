@@ -21,9 +21,18 @@ public class SolutionTest {
         right.left = new TreeNode(15);
         right.right = new TreeNode(7);
 
-        List<List<Integer>> actual = new Solution().levelOrder(root);
+        List<List<Integer>> recursive = new Solution().levelOrder(root);
 
-        Assertions.assertThat(actual).isEqualTo(
+        Assertions.assertThat(recursive).isEqualTo(
+                Arrays.asList(
+                        Arrays.asList(3),
+                        Arrays.asList(9, 20),
+                        Arrays.asList(15, 7)
+                ));
+
+        List<List<Integer>> iterative = new Solution().levelOrderIterative(root);
+
+        Assertions.assertThat(iterative).isEqualTo(
                 Arrays.asList(
                         Arrays.asList(3),
                         Arrays.asList(9, 20),
