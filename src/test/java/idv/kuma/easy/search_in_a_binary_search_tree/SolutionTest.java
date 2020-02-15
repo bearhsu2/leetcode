@@ -1,5 +1,6 @@
 package idv.kuma.easy.search_in_a_binary_search_tree;
 
+import org.assertj.core.api.Assertions;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -18,8 +19,12 @@ public class SolutionTest {
         left.left = new TreeNode(1);
         left.right = new TreeNode(3);
 
-        TreeNode actual = new Solution().searchBST(root, 2);
+        TreeNode recursive = new Solution().searchBST(root, 2);
 
-        Assert.assertEquals(left, actual);
+        Assert.assertEquals(left, recursive);
+
+        TreeNode iteratively = new Solution().searchBSTIteratively(root, 2);
+
+        Assert.assertEquals(left, iteratively);
     }
 }
