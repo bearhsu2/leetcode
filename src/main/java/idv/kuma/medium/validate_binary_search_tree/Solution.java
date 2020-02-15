@@ -3,7 +3,6 @@ package idv.kuma.medium.validate_binary_search_tree;
 public class Solution {
     long last = Long.MIN_VALUE;
 
-
     public boolean isValidBST(TreeNode root) {
 
         if (root == null) {
@@ -20,11 +19,7 @@ public class Solution {
             return false;
         }
 
-        if (!isValidBST(root.right)) {
-            return false;
-        }
-
-        return true;
+        return isValidBST(root.right);
 
     }
 }
