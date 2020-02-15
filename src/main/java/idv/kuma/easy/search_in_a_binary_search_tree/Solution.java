@@ -22,22 +22,16 @@ public class Solution {
         TreeNode current = root;
 
         while (current != null) {
-
             if (val == current.val) {
                 break;
             }
 
-            if (val < current.val) {
-                current = current.left;
-            } else {
-                current = current.right;
-            }
-
-
+            current = val < current.val
+                    ? current.left
+                    : current.right;
         }
 
         return current;
-
     }
 }
 
