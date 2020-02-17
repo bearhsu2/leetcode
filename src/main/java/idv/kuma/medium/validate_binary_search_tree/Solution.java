@@ -13,11 +13,10 @@ public class Solution {
             return false;
         }
 
-        long previousLast = last;
-        last = root.val;
-        if (root.val <= previousLast) {
+        if (root.val <= last) {
             return false;
         }
+        last = root.val;
 
         return isValidBST(root.right);
 
