@@ -12,6 +12,7 @@ public class SolutionTest {
         TreeNode root = new TreeNode(Integer.MIN_VALUE);
 
         Assert.assertTrue(new Solution().isValidBST(root));
+        Assert.assertTrue(new Solution().isValidBSTIteratively(root));
     }
     @Test
     public void name0() {
@@ -23,6 +24,7 @@ public class SolutionTest {
         root.left = left;
 
         Assert.assertTrue(new Solution().isValidBST(root));
+        Assert.assertTrue(new Solution().isValidBSTIteratively(root));
     }
 
     @Test
@@ -37,6 +39,7 @@ public class SolutionTest {
         root.right = right;
 
         Assert.assertTrue(new Solution().isValidBST(root));
+        Assert.assertTrue(new Solution().isValidBSTIteratively(root));
     }
 
 
@@ -58,6 +61,7 @@ public class SolutionTest {
         right.right = rightRight;
 
         Assert.assertFalse(new Solution().isValidBST(root));
+        Assert.assertFalse(new Solution().isValidBSTIteratively(root));
 
     }
 }
