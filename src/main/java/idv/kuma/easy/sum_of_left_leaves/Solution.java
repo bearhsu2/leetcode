@@ -4,13 +4,9 @@ public class Solution {
 
     private int sum = 0;
 
-
     public int sumOfLeftLeaves(TreeNode root) {
-
         doSumLeft(root, false);
-
         return sum;
-
     }
 
 
@@ -21,17 +17,17 @@ public class Solution {
         }
 
         // add val to sum if root is a left leaf
-        if (root.left == null && root.right == null) {
-            if (isLeft) {
-                sum += root.val;
-            }
+        if (isLeaf(root) && isLeft) {
+            sum += root.val;
         }
 
         doSumLeft(root.left, true);
-
         doSumLeft(root.right, false);
 
+    }
 
+    private boolean isLeaf(TreeNode root) {
+        return root.left == null && root.right == null;
     }
 }
 
