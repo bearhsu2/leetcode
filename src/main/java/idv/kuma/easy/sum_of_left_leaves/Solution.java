@@ -2,29 +2,28 @@ package idv.kuma.easy.sum_of_left_leaves;
 
 public class Solution {
 
-    private int sum = 0;
 
     public int sumOfLeftLeaves(TreeNode root) {
-        doSumLeft(root, false);
-        return sum;
+        return doSumLeft(root, false);
     }
 
 
-    private void doSumLeft(TreeNode root, boolean isLeft) {
+    private int doSumLeft(TreeNode root, boolean isLeft) {
 
         if (root == null) {
-            return;
+            return 0;
         }
 
         // add val to sum if root is a left leaf
         if (isLeaf(root) && isLeft) {
-            sum += root.val;
+            return root.val;
         }
 
-        doSumLeft(root.left, true);
-        doSumLeft(root.right, false);
+        return doSumLeft(root.left, true)
+                + doSumLeft(root.right, false);
 
     }
+
 
     private boolean isLeaf(TreeNode root) {
         return root.left == null && root.right == null;
