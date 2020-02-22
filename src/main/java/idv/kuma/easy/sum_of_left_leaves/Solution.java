@@ -14,7 +14,6 @@ public class Solution {
             return 0;
         }
 
-        // add val to sum if root is a left leaf
         if (isLeaf(root) && isLeft) {
             return root.val;
         }
