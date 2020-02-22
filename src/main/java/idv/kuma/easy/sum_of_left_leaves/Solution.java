@@ -7,10 +7,6 @@ public class Solution {
 
     public int sumOfLeftLeaves(TreeNode root) {
 
-        if (root == null) {
-            return 0;
-        }
-
         doSumLeft(root, false);
 
         return sum;
@@ -20,6 +16,10 @@ public class Solution {
 
     private void doSumLeft(TreeNode root, boolean isLeft) {
 
+        if (root == null) {
+            return;
+        }
+
         // add val to sum if root is a left leaf
         if (root.left == null && root.right == null) {
             if (isLeft) {
@@ -27,13 +27,9 @@ public class Solution {
             }
         }
 
-        if (root.left != null) {
-            doSumLeft(root.left, true);
-        }
+        doSumLeft(root.left, true);
 
-        if (root.right != null) {
-            doSumLeft(root.right, false);
-        }
+        doSumLeft(root.right, false);
 
 
     }
