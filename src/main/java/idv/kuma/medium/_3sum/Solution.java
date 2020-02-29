@@ -4,9 +4,7 @@ import java.util.*;
 
 public
 class Solution {
-    public List<List<Integer>> threeSum(int[] input) {
-
-        int[] nums = deDuplicate(input);
+    public List<List<Integer>> threeSum(int[] nums) {
 
         List<List<Integer>> result = new ArrayList<>();
         for (int i = 0; i < nums.length - 2; i++) {
@@ -28,11 +26,6 @@ class Solution {
         return result;
     }
 
-
-    private int[] deDuplicate(int[] input) {
-
-        return null;
-    }
 
 
     private List<List<Integer>> twoSum(int[] nums, int target) {
