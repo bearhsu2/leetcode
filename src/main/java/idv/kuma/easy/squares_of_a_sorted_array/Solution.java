@@ -17,17 +17,16 @@ public class Solution {
             int absTail = Math.abs(numbers[tail]);
 
             if (absHead <= absTail) {
-                result[current] = absTail * absTail;
+                result[current] = (int) Math.pow(absTail, 2);
                 tail--;
             } else {
-                result[current] = absHead * absHead;
+                result[current] = (int) Math.pow(absHead,2);
                 head++;
             }
 
             current--;
 
         }
-        System.out.println("");
 
 
         return result;
