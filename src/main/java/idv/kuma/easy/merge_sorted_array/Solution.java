@@ -11,7 +11,6 @@ public class Solution {
         int current = 0;
         while (current < m + n) {
 
-
             if (i >= m) {
                 target[current] = input2[j];
                 j++;
@@ -35,16 +34,13 @@ public class Solution {
             current++;
         }
 
-
     }
 
 
     private int[] makeMirror(int[] nums, int m) {
         int[] result = new int[m];
 
-        for (int i = 0; i < m; i++) {
-            result[i] = nums[i];
-        }
+        System.arraycopy(nums, 0, result, 0, m);
 
         return result;
     }
