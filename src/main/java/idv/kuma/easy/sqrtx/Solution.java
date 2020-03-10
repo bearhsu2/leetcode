@@ -7,7 +7,7 @@ public class Solution {
             return 0;
         }
 
-        return doSqrt(2, x / 2, x);
+        return doSqrt(1, x / 2, x);
 
     }
 
