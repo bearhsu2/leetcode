@@ -1,6 +1,17 @@
 package idv.kuma.medium.perfect_square;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Solution {
+
+    private Set<Integer> knownSquares;
+
+
+    public Solution() {
+        knownSquares = new HashSet<>();
+    }
+
 
     public int numSquares(int n) {
 
@@ -10,20 +21,30 @@ public class Solution {
             return 1;
         }
 
+        knownSquares.add(1);
+
         int[] minNum = new int[n + 1];
-
-
         minNum[0] = 0;
         minNum[1] = 1;
         for (int i = 2; i <= n; i++) {
 
             if (isPerfectSquare(i)) {
                 minNum[i] = 1;
+                knownSquares.add(i * i);
             } else {
 
                 // find largest perfect square less than i, say x
+                int x = 0;
+                for (int j = i; j > 0; j--) {
+                    if (isPerfectSquare(j)) {
+                        x = j;
+                        break;
+                    }
+                }
 
-                // minNum = 1 + minNum[i-x^2]
+
+                // minNum[i] = 1 + minNum[i-x^2]
+                minNum[i] = 1 + minNum[i - x * x];
 
             }
 
