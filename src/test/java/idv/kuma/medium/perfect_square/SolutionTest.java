@@ -3,8 +3,6 @@ package idv.kuma.medium.perfect_square;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class SolutionTest {
 
     @Test
@@ -13,14 +11,15 @@ public class SolutionTest {
     }
 
 
-//    @Test
+    //    @Test
 //    public void _2_Then_2() {
 //    }
 //
 //
-//    @Test
-//    public void _4_Then_1() {
-//    }
+    @Test
+    public void _4_Then_1() {
+        Assertions.assertThat(new Solution().numSquares(4)).isEqualTo(1);
+    }
 //
 //
 //    @Test
