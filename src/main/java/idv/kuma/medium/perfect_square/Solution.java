@@ -2,7 +2,6 @@ package idv.kuma.medium.perfect_square;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Solution {
 
@@ -22,19 +21,14 @@ public class Solution {
             } else {
 
                 int finalI = i;
-                List<Integer> deductions = perfectSquares.stream().filter(v -> v < finalI).collect(Collectors.toList());
 
-                Integer formerMinNum = null;
-                for (Integer deduction : deductions) {
-                    int candidate = minNum[i - deduction];
 
-                    if (formerMinNum == null || candidate < formerMinNum) {
-                        formerMinNum = candidate;
-                    }
-
-                }
-
-                minNum[i] = 1+ formerMinNum;
+                minNum[i] = 1 + perfectSquares
+                        .stream()
+                        .filter(v -> v < finalI)
+                        .mapToInt(d -> minNum[finalI - d])
+                        .min()
+                        .getAsInt();
 
             }
 
@@ -58,7 +52,6 @@ public class Solution {
 
         return result;
     }
-
 
 
     private boolean isPerfectSquare(double x) {
