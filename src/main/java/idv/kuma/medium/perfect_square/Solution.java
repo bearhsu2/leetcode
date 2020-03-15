@@ -5,23 +5,20 @@ import java.util.List;
 
 public class Solution {
 
-    private List<Integer> perfectSquares;
-    private int[] minNum;
-
 
     public int numSquares(int n) {
 
-        perfectSquares = findPerfectSquares(n);
-        minNum = new int[n + 1];
+        List<Integer> perfectSquares = new ArrayList<>();
+
+        int[] minNum = new int[n + 1];
 
         for (int i = 1; i <= n; i++) {
 
-            if (perfectSquares.contains(i)) {
+            if (isPerfectSquare(i)) {
+                perfectSquares.add(i);
                 minNum[i] = 1;
             } else {
-
                 int finalI = i;
-
 
                 minNum[i] = 1 + perfectSquares
                         .stream()
@@ -29,7 +26,6 @@ public class Solution {
                         .mapToInt(d -> minNum[finalI - d])
                         .min()
                         .getAsInt();
-
             }
 
         }
