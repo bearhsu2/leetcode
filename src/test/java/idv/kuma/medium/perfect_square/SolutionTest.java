@@ -27,9 +27,10 @@ public class SolutionTest {
     public void _4_Then_1() {
         Assertions.assertThat(new Solution().numSquares(4)).isEqualTo(1);
     }
-//
-//
-//    @Test
-//    public void _12_Then_3() {
-//    }
+
+
+    @Test
+    public void _12_Then_3() {
+        Assertions.assertThat(new Solution().numSquares(12)).isEqualTo(3);
+    }
 }

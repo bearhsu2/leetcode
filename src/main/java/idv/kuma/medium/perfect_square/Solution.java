@@ -1,59 +1,64 @@
 package idv.kuma.medium.perfect_square;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Solution {
 
-    private Set<Integer> knownSquares;
-
-
-    public Solution() {
-        knownSquares = new HashSet<>();
-    }
+    private List<Integer> perfectSquares;
+    private int[] minNum;
 
 
     public int numSquares(int n) {
 
-        if (n == 1) return 1;
+        perfectSquares = findPerfectSquares(n);
+        minNum = new int[n + 1];
 
-        if (isPerfectSquare(n)) {
-            return 1;
-        }
+        for (int i = 1; i <= n; i++) {
 
-        knownSquares.add(1);
-
-        int[] minNum = new int[n + 1];
-        minNum[0] = 0;
-        minNum[1] = 1;
-        for (int i = 2; i <= n; i++) {
-
-            if (isPerfectSquare(i)) {
+            if (perfectSquares.contains(i)) {
                 minNum[i] = 1;
-                knownSquares.add(i * i);
             } else {
 
-                // find largest perfect square less than i, say x
-                int x = 0;
-                for (int j = i; j > 0; j--) {
-                    if (isPerfectSquare(j)) {
-                        x = j;
-                        break;
+                int finalI = i;
+                List<Integer> deductions = perfectSquares.stream().filter(v -> v < finalI).collect(Collectors.toList());
+
+                Integer formerMinNum = null;
+                for (Integer deduction : deductions) {
+                    int candidate = minNum[i - deduction];
+
+                    if (formerMinNum == null || candidate < formerMinNum) {
+                        formerMinNum = candidate;
                     }
+
                 }
 
-
-                // minNum[i] = 1 + minNum[i-x^2]
-                minNum[i] = 1 + minNum[i - x * x];
+                minNum[i] = 1+ formerMinNum;
 
             }
 
-
         }
 
-
         return minNum[n];
+
+
     }
+
+
+    private List<Integer> findPerfectSquares(int n) {
+        List<Integer> result = new ArrayList<>();
+
+        for (int i = 1; i <= n; i++) {
+            int square = i * i;
+            if (square <= n) {
+                result.add(square);
+            }
+        }
+
+        return result;
+    }
+
 
 
     private boolean isPerfectSquare(double x) {
