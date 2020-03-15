@@ -36,20 +36,6 @@ public class Solution {
     }
 
 
-    private List<Integer> findPerfectSquares(int n) {
-        List<Integer> result = new ArrayList<>();
-
-        for (int i = 1; i <= n; i++) {
-            int square = i * i;
-            if (square <= n) {
-                result.add(square);
-            }
-        }
-
-        return result;
-    }
-
-
     private boolean isPerfectSquare(double x) {
 
         // finding the square root of given number
@@ -62,5 +48,7 @@ public class Solution {
          */
         return ((sq - Math.floor(sq)) == 0);
     }
+
+
 
 }
