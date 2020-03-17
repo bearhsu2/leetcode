@@ -1,38 +1,66 @@
 package idv.kuma.medium.perfect_square;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class Solution {
 
 
+    public List<Integer> perfectSquares;
+
+
     public int numSquares(int n) {
 
-        List<Integer> perfectSquares = new ArrayList<>();
 
-        int[] minNum = new int[n + 1];
+        perfectSquares = findPerfectSquares(n);
 
-        for (int i = 1; i <= n; i++) {
+        Queue<Integer> queue = new LinkedList<>();
 
-            if (isPerfectSquare(i)) {
-                perfectSquares.add(i);
-                minNum[i] = 1;
-            } else {
-                int finalI = i;
+        queue.add(n);
 
-                minNum[i] = 1 + perfectSquares
-                        .stream()
-                        .filter(v -> v < finalI)
-                        .mapToInt(d -> minNum[finalI - d])
-                        .min()
-                        .getAsInt();
+        for (int level = 1; ; level++) {
+
+            Queue<Integer> nextLevelQueue = new LinkedList<>();
+
+            while (!queue.isEmpty()) {
+
+                Integer value = queue.poll();
+
+                if (isPerfectSquare(value)) {
+                    return level;
+                } else {
+
+                    perfectSquares
+                            .stream()
+                            .filter(s -> s < value)
+                            .forEach(minuend -> nextLevelQueue.add(value - minuend));
+
+                }
+
             }
+
+            queue = nextLevelQueue;
 
         }
 
-        return minNum[n];
+
+    }
 
 
+    private List<Integer> findPerfectSquares(int n) {
+        List<Integer> result = new ArrayList<>();
+
+        int end = n / 2;
+        for (int i = 1; i <= end; i++) {
+            int square = i * i;
+            if (square <= n) {
+                result.add(square);
+            }
+        }
+
+        return result;
     }
 
 
@@ -48,7 +76,5 @@ public class Solution {
          */
         return ((sq - Math.floor(sq)) == 0);
     }
-
-
-
 }
+
