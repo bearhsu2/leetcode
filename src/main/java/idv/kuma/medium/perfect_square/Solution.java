@@ -7,14 +7,9 @@ import java.util.Queue;
 
 public class Solution {
 
-
-    public List<Integer> perfectSquares;
-
-
     public int numSquares(int n) {
 
-
-        perfectSquares = findPerfectSquares(n);
+        List<Integer> perfectSquares = findPerfectSquares(n);
 
         Queue<Integer> queue = new LinkedList<>();
 
