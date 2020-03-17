@@ -32,10 +32,15 @@ public class Solution {
                     return level;
                 } else {
 
-                    perfectSquares
-                            .stream()
-                            .filter(s -> s < value)
-                            .forEach(minuend -> nextLevelQueue.add(value - minuend));
+                    for (int minuend : perfectSquares) {
+
+                        if (minuend >= value) {
+                            break;
+                        }
+
+                        nextLevelQueue.add(value - minuend);
+
+                    }
 
                 }
 
