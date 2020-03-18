@@ -1,9 +1,9 @@
 package idv.kuma.medium.perfect_square;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.HashSet;
 import java.util.List;
-import java.util.Queue;
+import java.util.Set;
 
 public class Solution {
 
@@ -11,17 +11,15 @@ public class Solution {
 
         List<Integer> perfectSquares = findPerfectSquares(n);
 
-        Queue<Integer> queue = new LinkedList<>();
+        Set<Integer> set = new HashSet<>();
 
-        queue.add(n);
+        set.add(n);
 
         for (int level = 1; ; level++) {
 
-            Queue<Integer> nextLevelQueue = new LinkedList<>();
+            Set<Integer> nextLevelSet = new HashSet<>();
 
-            while (!queue.isEmpty()) {
-
-                Integer value = queue.poll();
+            for (Integer value : set) {
 
                 if (isPerfectSquare(value)) {
                     return level;
@@ -29,11 +27,10 @@ public class Solution {
 
                     for (int minuend : perfectSquares) {
 
-                        if (minuend >= value) {
-                            break;
+                        if (minuend <= value) {
+                            nextLevelSet.add(value - minuend);
                         }
 
-                        nextLevelQueue.add(value - minuend);
 
                     }
 
@@ -41,7 +38,7 @@ public class Solution {
 
             }
 
-            queue = nextLevelQueue;
+            set = nextLevelSet;
 
         }
 
