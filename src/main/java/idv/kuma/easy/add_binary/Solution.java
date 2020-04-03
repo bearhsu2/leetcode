@@ -7,18 +7,25 @@ public class Solution {
             return "0";
         }
 
-
-        Integer aInt = Integer.valueOf(a);
-        Integer bInt = Integer.valueOf(b);
-
-        int temp = aInt + bInt;
+        if (a.length() > b.length()) {
+            String temp = a;
+            a = b;
+            b = temp;
+        }
 
         String result = "";
-
         int carry = 0;
-        while (temp > 0) {
-            int value = carry + temp % 10;
-            temp /= 10;
+        while (a.length() > 0 && b.length() > 0) {
+
+            int aInt = a.length() > 0
+                    ? Character.getNumericValue(a.charAt(a.length() - 1))
+                    : 0;
+
+            int bInt = b.length() > 0
+                    ? Character.getNumericValue(b.charAt(b.length() - 1))
+                    : 0;
+
+            int value = carry + aInt + bInt;
 
             if (value == 1) {
                 result = 1 + result;
@@ -34,12 +41,18 @@ public class Solution {
                 carry = 0;
             }
 
+
+            if (a.length() > 0) {
+                a = a.substring(0, a.length() - 1);
+            }
+            if (b.length() > 0) {
+                b = b.substring(0, b.length() - 1);
+            }
         }
 
         if (carry == 1) {
             result = 1 + result;
         }
-
 
         return result;
     }
