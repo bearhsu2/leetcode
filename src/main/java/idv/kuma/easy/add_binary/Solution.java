@@ -15,7 +15,7 @@ public class Solution {
 
         String result = "";
         int carry = 0;
-        while (a.length() > 0 && b.length() > 0) {
+        while (a.length() > 0 || b.length() > 0) {
 
             int aInt = a.length() > 0
                     ? Character.getNumericValue(a.charAt(a.length() - 1))
