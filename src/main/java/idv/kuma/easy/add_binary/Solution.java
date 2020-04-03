@@ -20,15 +20,11 @@ public class Solution {
             int aLength = a.length();
             int bLength = b.length();
 
-            int aInt = aLength > 0
+            int value = carry + (aLength > 0
                     ? Character.getNumericValue(a.charAt(a.length() - 1))
-                    : 0;
-
-            int bInt = bLength > 0
+                    : 0) + (bLength > 0
                     ? Character.getNumericValue(b.charAt(b.length() - 1))
-                    : 0;
-
-            int value = carry + aInt + bInt;
+                    : 0);
 
             if (value == 1) {
                 result = 1 + result;
@@ -43,7 +39,6 @@ public class Solution {
                 result = 0 + result;
                 carry = 0;
             }
-
 
             if (aLength > 0) {
                 a = a.substring(0, a.length() - 1);
