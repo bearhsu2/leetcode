@@ -17,11 +17,14 @@ public class Solution {
         int carry = 0;
         while (a.length() > 0 || b.length() > 0) {
 
-            int aInt = a.length() > 0
+            int aLength = a.length();
+            int bLength = b.length();
+
+            int aInt = aLength > 0
                     ? Character.getNumericValue(a.charAt(a.length() - 1))
                     : 0;
 
-            int bInt = b.length() > 0
+            int bInt = bLength > 0
                     ? Character.getNumericValue(b.charAt(b.length() - 1))
                     : 0;
 
@@ -42,10 +45,10 @@ public class Solution {
             }
 
 
-            if (a.length() > 0) {
+            if (aLength > 0) {
                 a = a.substring(0, a.length() - 1);
             }
-            if (b.length() > 0) {
+            if (bLength > 0) {
                 b = b.substring(0, b.length() - 1);
             }
         }
