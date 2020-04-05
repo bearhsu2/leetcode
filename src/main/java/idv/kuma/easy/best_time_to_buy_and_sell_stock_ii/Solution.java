@@ -1,7 +1,8 @@
 package idv.kuma.easy.best_time_to_buy_and_sell_stock_ii;
 
 public class Solution {
-    // greedy, array
+    // greedy
+    // array
     public int maxProfit(int[] prices) {
 
         int result = 0;
