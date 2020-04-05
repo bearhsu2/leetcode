@@ -6,11 +6,14 @@ public class Solution {
 
         int result = 0;
         for (int i = 1; i < prices.length; i++) {
-            if (prices[i] > prices[i - 1]) {
-                result += prices[i] - prices[i - 1];
-            }
-        }
 
+            int diff = prices[i] - prices[i - 1];
+
+            if (diff > 0) {
+                result += diff;
+            }
+
+        }
 
         return result;
     }
