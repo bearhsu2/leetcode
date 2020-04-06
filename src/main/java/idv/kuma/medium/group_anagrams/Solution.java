@@ -5,19 +5,19 @@ import java.util.*;
 public class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
 
-        Map<Set<Character>, List<String>> charsToStrings = new HashMap();
+        Map<String, List<String>> charsToStrings = new HashMap();
 
         for (String str : strs) {
 
-            Set<Character> chars = toCharSet(str);
+            String key = hash(str);
 
-            if (!charsToStrings.containsKey(chars)) {
+            if (!charsToStrings.containsKey(key)) {
 
-                charsToStrings.put(chars, new ArrayList<>());
+                charsToStrings.put(key, new ArrayList<>());
 
             }
 
-            charsToStrings.get(chars).add(str);
+            charsToStrings.get(key).add(str);
 
         }
 
@@ -26,14 +26,20 @@ public class Solution {
     }
 
 
-    private Set<Character> toCharSet(String str) {
+    private String hash(String str) {
 
-        Set<Character> result = new HashSet<>();
 
-        for (char c : str.toCharArray()) {
-            result.add(c);
+        char[] chars = str.toCharArray();
+
+        List<Character> characters = new ArrayList<>();
+
+        for (char aChar : chars) {
+            characters.add(aChar);
         }
 
-        return result;
+        Collections.sort(characters);
+
+        return String.valueOf(characters);
+
     }
 }
