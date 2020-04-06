@@ -1,4 +1,4 @@
-package idv.kuma.easy.group_anagrams;
+package idv.kuma.medium.group_anagrams;
 
 import java.util.*;
 
