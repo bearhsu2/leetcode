@@ -28,18 +28,18 @@ public class Solution {
 
     private String hash(String str) {
 
-
-        char[] chars = str.toCharArray();
-
-        List<Character> characters = new ArrayList<>();
-
-        for (char aChar : chars) {
-            characters.add(aChar);
+        int[] counts = new int[26];
+        for (char c : str.toCharArray()) {
+            counts[c - 'a']++;
         }
 
-        Collections.sort(characters);
+        StringBuilder sb = new StringBuilder("");
+        for (int i = 0; i < 26; i++) {
+            sb.append('#');
+            sb.append(counts[i]);
+        }
 
-        return String.valueOf(characters);
+        return sb.toString();
 
     }
 }
