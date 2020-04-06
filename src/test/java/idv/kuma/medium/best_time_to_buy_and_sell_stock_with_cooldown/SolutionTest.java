@@ -18,12 +18,12 @@ public class SolutionTest {
                 .isEqualTo(expected);
     }
 
-//
-//    @Test
-//    public void _7_6_4_3_1_Then_0() {
-//        runAndCheck(new int[]{7, 6, 4, 3, 1}, 0);
-//    }
-//
+
+    @Test
+    public void _6_1_3_2_4_7_Then_6() {
+        runAndCheck(new int[]{6, 1, 3, 2, 4, 7}, 6);
+    }
+
 //
 //    @Test
 //    public void _1_2_3_4_5_Then_4() {
