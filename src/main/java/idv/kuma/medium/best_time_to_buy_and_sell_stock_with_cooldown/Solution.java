@@ -3,6 +3,7 @@ package idv.kuma.medium.best_time_to_buy_and_sell_stock_with_cooldown;
 public class Solution {
     public int maxProfit(int[] prices) {
 
+        // dp
 
         int length = prices.length;
 
