@@ -5,35 +5,20 @@ public class Solution {
 
         int nextNonZeroIndex = 0;
         for (int i = 0; i < nums.length; i++) {
-            nextNonZeroIndex = Math.max(nextNonZeroIndex, i);
 
-            if (nums[i] == 0) {
-
-                nextNonZeroIndex = findNextNonZeroIndex(nextNonZeroIndex, nums);
-
-                if (nextNonZeroIndex < 0) {
-                    return;
-                }
-
-                nums[i] = nums[nextNonZeroIndex];
-                nums[nextNonZeroIndex] = 0;
-
+            if (nums[i] !=0) {
+                swap(nums, nextNonZeroIndex, i);
+                nextNonZeroIndex++;
             }
-
         }
-
 
     }
 
 
-    private int findNextNonZeroIndex(int init, int[] nums) {
-
-        for (int i = init; i < nums.length; i++) {
-            if (nums[i] != 0) {
-                return i;
-            }
-        }
-
-        return -1;
+    private void swap(int[] nums, int index1, int index2) {
+        int temp = nums[index2];
+        nums[index2] = nums[index1];
+        nums[index1] = temp;
     }
+
 }
