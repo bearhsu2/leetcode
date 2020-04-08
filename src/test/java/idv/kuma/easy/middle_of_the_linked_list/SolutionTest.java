@@ -16,6 +16,17 @@ public class SolutionTest {
 
     }
 
+    @Test
+    public void _1_2_3_4_5_6_Then_4() {
+
+        ListNode head = createNodes(1, 2, 3, 4, 5,6);
+
+        ListNode result = new Solution().middleNode(head);
+
+        Assertions.assertThat(result.val).isEqualTo(4);
+
+    }
+
 
     private ListNode createNodes(int... values) {
 
