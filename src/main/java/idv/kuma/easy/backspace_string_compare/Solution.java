@@ -1,0 +1,46 @@
+package idv.kuma.easy.backspace_string_compare;
+
+import java.util.Stack;
+
+public class Solution {
+    // Two pointers, stack
+
+
+    public boolean backspaceCompare(String S, String T) {
+
+        String tracedS = trace(S);
+        String tracedT = trace(T);
+
+        return tracedS.equals(tracedT);
+    }
+
+
+    private String trace(String s) {
+
+        Stack<Character> stack = new Stack<>();
+        int length = s.length();
+
+        for (int i = 0; i < length; i++) {
+            char c = s.charAt(i);
+
+            if (c == '#') {
+                if (!stack.isEmpty()) {
+                    stack.pop();
+                }
+            } else {
+                stack.push(c);
+            }
+        }
+
+        return parseStack(stack);
+    }
+
+
+    private String parseStack(Stack<Character> stack) {
+        StringBuilder sb = new StringBuilder();
+        while (!stack.isEmpty()) {
+            sb.insert(0, stack.pop());
+        }
+        return sb.toString();
+    }
+}
