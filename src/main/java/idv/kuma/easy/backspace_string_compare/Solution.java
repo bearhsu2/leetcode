@@ -9,10 +9,7 @@ public class Solution {
 
     public boolean backspaceCompare(String S, String T) {
 
-        String tracedS = trace(S);
-        String tracedT = trace(T);
-
-        return tracedS.equals(tracedT);
+        return trace(S).equals(trace(T));
     }
 
 
@@ -33,7 +30,8 @@ public class Solution {
             }
         }
 
-        return parseStack(stack);
+        return String.valueOf(stack);
+
     }
 
 
@@ -42,6 +40,7 @@ public class Solution {
         while (!stack.isEmpty()) {
             sb.insert(0, stack.pop());
         }
+
         return sb.toString();
     }
 }
