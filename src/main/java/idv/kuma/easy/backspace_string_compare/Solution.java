@@ -35,12 +35,4 @@ public class Solution {
     }
 
 
-    private String parseStack(Deque<Character> stack) {
-        StringBuilder sb = new StringBuilder();
-        while (!stack.isEmpty()) {
-            sb.insert(0, stack.pop());
-        }
-
-        return sb.toString();
-    }
 }
