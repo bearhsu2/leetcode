@@ -8,6 +8,9 @@ public class SolutionTest {
     @Test
     public void name() {
         Assertions.assertThat(run("ab#c", "ad#c")).isTrue();
+        Assertions.assertThat(run("ab##", "c#d#")).isTrue();
+        Assertions.assertThat(run("a##c", "#a#c")).isTrue();
+        Assertions.assertThat(run("a#c", "b")).isFalse();
     }
 
 

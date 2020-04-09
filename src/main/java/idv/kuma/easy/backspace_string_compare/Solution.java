@@ -1,6 +1,7 @@
 package idv.kuma.easy.backspace_string_compare;
 
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 public class Solution {
     // Two pointers, stack
@@ -17,7 +18,7 @@ public class Solution {
 
     private String trace(String s) {
 
-        Stack<Character> stack = new Stack<>();
+        Deque<Character> stack = new ArrayDeque<>();
         int length = s.length();
 
         for (int i = 0; i < length; i++) {
@@ -36,7 +37,7 @@ public class Solution {
     }
 
 
-    private String parseStack(Stack<Character> stack) {
+    private String parseStack(Deque<Character> stack) {
         StringBuilder sb = new StringBuilder();
         while (!stack.isEmpty()) {
             sb.insert(0, stack.pop());
