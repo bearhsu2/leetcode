@@ -4,7 +4,7 @@ public class Solution {
 
     public String stringShift(String s, int[][] shift) {
 
-        
+
 
         return "";
     }
