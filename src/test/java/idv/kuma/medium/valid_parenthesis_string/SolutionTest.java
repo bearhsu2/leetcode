@@ -1,7 +1,15 @@
 package idv.kuma.medium.valid_parenthesis_string;
 
-import static org.junit.Assert.*;
+import org.assertj.core.api.Assertions;
+import org.junit.Test;
 
 public class SolutionTest {
 
+    @Test
+    public void name() {
+        Assertions.assertThat(new Solution().checkValidString("()")).isTrue();
+        Assertions.assertThat(new Solution().checkValidString("(*)")).isTrue();
+        Assertions.assertThat(new Solution().checkValidString("((*)")).isTrue();
+        Assertions.assertThat(new Solution().checkValidString("(*))")).isTrue();
+    }
 }
