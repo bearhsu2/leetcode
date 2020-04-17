@@ -6,17 +6,18 @@ import java.util.Queue;
 public class Solution {
     public int numIslands(char[][] grid) {
 
-        if (grid.length <= 0 || grid[0].length <= 0) {
-            return 0;
-        }
+        int height = grid.length;
+        if (height <= 0) return 0;
+
+        int width = grid[0].length;
+        if (width <= 0) return 0;
 
         int number = 0;
 
-        boolean[][] handled = new boolean[grid.length][grid[0].length];
+        boolean[][] handled = new boolean[height][width];
 
-
-        for (int i = 0; i < grid.length; i++) {
-            for (int j = 0; j < grid[i].length; j++) {
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
 
                 char c = grid[i][j];
 
@@ -28,7 +29,7 @@ public class Solution {
                     //   all connected elements will be marked as handled
                     doBfs(i, j, grid, handled);
 
-                    // number ++
+                    // done with current island
                     number++;
                 }
 
@@ -43,6 +44,7 @@ public class Solution {
 
         Queue<Point> queue = new ArrayDeque<>();
         queue.offer(new Point(startI, startJ));
+        handled[startI][startJ] = true;
 
         while (!queue.isEmpty()) {
 
@@ -55,8 +57,6 @@ public class Solution {
             if (i > 0) doHandle(i - 1, j, grid, handled, queue);
             if (j < grid[0].length - 1) doHandle(i, j + 1, grid, handled, queue);
             if (j > 0) doHandle(i, j - 1, grid, handled, queue);
-
-            handled[i][j] = true;
 
         }
 
