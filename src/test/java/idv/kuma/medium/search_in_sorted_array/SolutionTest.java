@@ -6,6 +6,14 @@ import org.junit.Test;
 public class SolutionTest {
     @Test
     public void name() {
+
+        Assertions.assertThat(new Solution().search(new int[]{0, 1, 2, 4, 5, 6, 7}, 0))
+                .isEqualTo(0);
+
+
+        Assertions.assertThat(new Solution().search(new int[]{1, 2, 4, 5, 6, 7, 0}, 0))
+                .isEqualTo(6);
+
         Assertions.assertThat(new Solution().search(new int[]{4, 5, 6, 7, 0, 1, 2}, 0))
                 .isEqualTo(4);
 
