@@ -21,13 +21,13 @@ public class Solution {
 
             int middle = (left + right) / 2;
 
+            if (nums[middle] > nums[middle + 1]) {
+                return nums[middle + 1];
+            }
             if (nums[middle] < nums[middle - 1]) {
                 return nums[middle];
             }
 
-            if (nums[middle] > nums[middle + 1]) {
-                return nums[middle + 1];
-            }
 
             if (nums[middle] > nums[0]) {
                 left = middle + 1;
