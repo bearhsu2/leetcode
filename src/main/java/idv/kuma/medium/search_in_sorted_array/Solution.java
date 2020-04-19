@@ -10,10 +10,23 @@ public class Solution {
     public int search(int[] nums, int target) {
 
         int length = nums.length;
+        if (length<=0) return -1;
+
+
         int indexOfMin = findIndexOfMin(nums);
 
         int[] right = Arrays.copyOfRange(nums, indexOfMin, length);
         int[] left = Arrays.copyOfRange(nums, 0, indexOfMin);
+
+        int rightResult = binarySearch(right, target);
+        if (rightResult >= 0) {
+            return rightResult + indexOfMin;
+        }
+
+        int leftResult = binarySearch(left, target);
+        if (leftResult>=0) {
+            return leftResult;
+        }
 
         return -1;
     }

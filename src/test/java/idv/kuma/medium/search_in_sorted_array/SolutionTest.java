@@ -4,9 +4,17 @@ import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
 public class SolutionTest {
+
+    @Test
+    public void empty() {
+
+        Assertions.assertThat(new Solution().search(new int[]{}, 5))
+                .isEqualTo(-1);
+    }
+
+
     @Test
     public void name1() {
-        ;
 
         Assertions.assertThat(new Solution().search(new int[]{4, 5, 6, 7, 0, 1, 2}, 3))
                 .isEqualTo(-1);
