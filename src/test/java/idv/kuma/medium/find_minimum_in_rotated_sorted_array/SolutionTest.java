@@ -13,5 +13,17 @@ public class SolutionTest {
 
         Assertions.assertThat(new Solution().findMin(new int[]{4, 5, 6, 7, 0, 1, 2}))
                 .isEqualTo(0);
+
+        Assertions.assertThat(new Solution().findMin(new int[]{1, 2, 3}))
+                .isEqualTo(1);
+
+        Assertions.assertThat(new Solution().findMin(new int[]{3, 1, 2}))
+                .isEqualTo(1);
+
+        Assertions.assertThat(new Solution().findMin(new int[]{1, 2}))
+                .isEqualTo(1);
+
+        Assertions.assertThat(new Solution().findMin(new int[]{2, 1}))
+                .isEqualTo(1);
     }
 }
