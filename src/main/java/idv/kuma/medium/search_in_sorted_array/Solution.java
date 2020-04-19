@@ -1,6 +1,5 @@
 package idv.kuma.medium.search_in_sorted_array;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Solution {
@@ -49,6 +48,36 @@ public class Solution {
                 left = middle + 1;
             } else {
                 right = middle - 1;
+            }
+
+        }
+
+
+        return -1;
+    }
+
+
+    private int binarySearch(int[] nums, int target) {
+        int length = nums.length;
+
+        if (length == 0) return -1;
+
+        int left = 0;
+        int right = length - 1;
+
+        while (left <= right) {
+
+            int middle = (left + right) / 2;
+
+            if (nums[middle] == target) {
+                return middle;
+            }
+
+
+            if (nums[middle] > target) {
+                right = middle - 1;
+            } else {
+                left = middle + 1;
             }
 
         }
