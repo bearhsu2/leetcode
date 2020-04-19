@@ -5,29 +5,39 @@ import org.junit.Test;
 
 public class SolutionTest {
     @Test
-    public void name() {
-
-        Assertions.assertThat(new Solution().search(new int[]{0, 1, 2, 4, 5, 6, 7}, 0))
-                .isEqualTo(0);
-
-
-        Assertions.assertThat(new Solution().search(new int[]{1, 2, 4, 5, 6, 7, 0}, 0))
-                .isEqualTo(6);
-
-        Assertions.assertThat(new Solution().search(new int[]{4, 5, 6, 7, 0, 1, 2}, 0))
-                .isEqualTo(4);
+    public void name1() {
+        ;
 
         Assertions.assertThat(new Solution().search(new int[]{4, 5, 6, 7, 0, 1, 2}, 3))
                 .isEqualTo(-1);
 
     }
 
-    //Example 1:
-    //
-    //Input: nums = [4,5,6,7,0,1,2], target = 0
-    //Output: 4
-    //Example 2:
-    //
-    //Input: nums = [4,5,6,7,0,1,2], target = 3
-    //Output: -1
+
+    @Test
+    public void name2() {
+
+        Assertions.assertThat(new Solution().search(new int[]{0, 1, 2, 4, 5, 6, 7}, 0))
+                .isEqualTo(0);
+
+
+    }
+
+
+    @Test
+    public void name3() {
+
+        Assertions.assertThat(new Solution().search(new int[]{1, 2, 4, 5, 6, 7, 0}, 0))
+                .isEqualTo(6);
+
+
+    }
+
+
+    @Test
+    public void name4() {
+        Assertions.assertThat(new Solution().search(new int[]{4, 5, 6, 7, 0, 1, 2}, 0))
+                .isEqualTo(4);
+    }
+
 }
