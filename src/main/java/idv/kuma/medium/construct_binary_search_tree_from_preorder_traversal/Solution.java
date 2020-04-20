@@ -11,7 +11,7 @@ public class Solution {
 
         TreeNode root = new TreeNode(preorder[0]);
 
-        for (int i = 1; i < preorder.length; i++) {
+        for (int i = 1; i < length; i++) {
             TreeNode node = new TreeNode(preorder[i]);
             insert(root, node);
         }
