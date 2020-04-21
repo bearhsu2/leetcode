@@ -16,11 +16,9 @@ public class Solution {
         int j = m - 1;
         int leftmost = -1;
 
-        while (i >= 0 && i < n && j >= 0 && j < m) {
+        while (i < n && j >= 0) {
 
-            int value = binaryMatrix.get(i, j);
-
-            if (value == 1) {
+            if (binaryMatrix.get(i, j) == 1) {
                 leftmost = j;
                 j--; // move left
             } else {
