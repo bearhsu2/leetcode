@@ -4,18 +4,8 @@ import java.util.List;
 
 public class Solution {
     // binary search
-
-
-    /**
-     * // This is the BinaryMatrix's API interface.
-     * // You should not implement it, or speculate about its implementation
-     * interface BinaryMatrix {
-     * public int get(int x, int y) {}
-     * public List<Integer> dimensions {}
-     * };
-     */
-
-
+    // or
+    // dp
     public int leftMostColumnWithOne(BinaryMatrix binaryMatrix) {
 
         List<Integer> dimensions = binaryMatrix.dimensions();
@@ -24,14 +14,14 @@ public class Solution {
 
         int i = 0;
         int j = m - 1;
-        int result = -1;
+        int leftmost = -1;
 
         while (i >= 0 && i < n && j >= 0 && j < m) {
 
             int value = binaryMatrix.get(i, j);
 
             if (value == 1) {
-                result = j;
+                leftmost = j;
                 j--; // move left
             } else {
                 i++; // move down
@@ -39,7 +29,7 @@ public class Solution {
 
         }
 
-        return result;
+        return leftmost;
     }
 
 }
