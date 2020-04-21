@@ -8,8 +8,9 @@ import java.util.List;
 
 public class SolutionTest {
 
+
     @Test
-    public void name() {
+    public void name0() {
         BinaryMatrix matrix = new DummyMatrix(new int[][]{
                 {0, 0},
                 {1, 1}
@@ -17,6 +18,17 @@ public class SolutionTest {
 
         Assertions.assertThat(new Solution().leftMostColumnWithOne(matrix))
                 .isEqualTo(0);
+    }
+
+    @Test
+    public void name1() {
+        BinaryMatrix matrix = new DummyMatrix(new int[][]{
+                {0, 0},
+                {0, 1}
+        });
+
+        Assertions.assertThat(new Solution().leftMostColumnWithOne(matrix))
+                .isEqualTo(1);
     }
 }
 
