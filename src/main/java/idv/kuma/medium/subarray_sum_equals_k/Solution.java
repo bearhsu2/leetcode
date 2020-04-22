@@ -18,8 +18,10 @@ public class Solution {
             sum += num;
 
             int diff = sum - target;
-            if (sumToFrequency.containsKey(diff)) {
-                counter += sumToFrequency.get(diff);
+
+            Integer frequency = sumToFrequency.get(diff);
+            if (frequency != null) {
+                counter += frequency;
             }
 
             sumToFrequency.put(sum, sumToFrequency.getOrDefault(sum, 0) + 1);
