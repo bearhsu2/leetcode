@@ -1,7 +1,5 @@
 package idv.kuma.easy.contains_duplicate;
 
-import com.sun.xml.internal.ws.encoding.HasEncoding;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -12,6 +10,7 @@ public class Solution {
 
 
         for (int num : nums) {
+
 
             if (set.contains(num)) {
                 return true;
