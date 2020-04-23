@@ -8,7 +8,7 @@ public class Solution {
         int range = n - m;
         for (int i = 0; i < 32; i++) {
 
-            if ((n & bit) != 0 && (m & bit) != 0 && range <= bit) {
+            if (range <= bit && (n & bit) != 0 && (m & bit) != 0) {
                 answer += bit;
             }
 
