@@ -16,4 +16,16 @@ public class SolutionTest {
         Assertions.assertThat(new Solution().maximalSquare(matrix))
                 .isEqualTo(4);
     }
+
+
+    @Test
+    public void name1() {
+        char[][] matrix = new char[][]{
+                {'0', '1'},
+                {'0', '1'}
+        };
+
+        Assertions.assertThat(new Solution().maximalSquare(matrix))
+                .isEqualTo(1);
+    }
 }
