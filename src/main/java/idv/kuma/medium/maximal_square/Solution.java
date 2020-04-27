@@ -28,8 +28,6 @@ public class Solution {
 
                     maxSideLength = Math.max(maxSideLength, dp[i][j]);
 
-                } else {
-                    dp[i][j] = 0;
                 }
             }
         }
