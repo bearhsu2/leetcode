@@ -14,11 +14,9 @@ public class Solution {
                 return false;
             }
 
-            int localFarthest = i + nums[i];
 
-            if (localFarthest > globalFarthest) {
-                globalFarthest = localFarthest;
-            }
+            globalFarthest = Math.max(globalFarthest, i + nums[i]);
+
 
             if (globalFarthest >= maxIndex) {
                 return true;
