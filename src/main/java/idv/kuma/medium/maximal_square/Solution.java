@@ -22,7 +22,7 @@ public class Solution {
 
                     dp[i][j] = i == 0 || j == 0
                             ? 1
-                            : min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]) + 1;
+                            : Math.min(Math.min(dp[i - 1][j], dp[i][j - 1]), dp[i - 1][j - 1]) + 1;
 
                     maxSideLength = Math.max(maxSideLength, dp[i][j]);
 
@@ -35,7 +35,4 @@ public class Solution {
     }
 
 
-    private int min(int i, int j, int k) {
-        return Math.min(Math.min(i, j), k);
-    }
 }
