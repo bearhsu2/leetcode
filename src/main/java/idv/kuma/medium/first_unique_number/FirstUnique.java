@@ -25,7 +25,7 @@ class FirstUnique {
 
     public void add(int value) {
 
-        Integer object = new Integer(value);
+        Integer object = value;
         if (appearedNumbers.contains(object)) {
 
             uniqueNumbers.remove(object);
