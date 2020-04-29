@@ -7,10 +7,7 @@ import java.util.Set;
 
 class FirstUnique {
 
-
     Set<Integer> appearedNumbers;
-
-
     Set<Integer> uniqueNumbers;
 
 
@@ -31,9 +28,7 @@ class FirstUnique {
         Integer object = new Integer(value);
         if (appearedNumbers.contains(object)) {
 
-            if (uniqueNumbers.contains(object)) {
-                uniqueNumbers.remove(object);
-            }
+            uniqueNumbers.remove(object);
 
         } else {
             appearedNumbers.add(object);
@@ -45,14 +40,10 @@ class FirstUnique {
 
     public int showFirstUnique() {
 
-
         Iterator<Integer> iterator = uniqueNumbers.iterator();
 
-        if (iterator.hasNext()) {
-            return iterator.next();
-        } else {
-            return -1;
-        }
-
+        return iterator.hasNext()
+                ? iterator.next()
+                : -1;
     }
 }
