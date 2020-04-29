@@ -1,21 +1,23 @@
 package idv.kuma.medium.first_unique_number;
 
-import java.util.ArrayDeque;
 import java.util.HashSet;
-import java.util.Queue;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 class FirstUnique {
 
 
     Set<Integer> appearedNumbers;
-    Queue<Integer> uniqueNumbers;
+
+
+    Set<Integer> uniqueNumbers;
 
 
     public FirstUnique(int[] nums) {
 
         this.appearedNumbers = new HashSet<>();
-        this.uniqueNumbers = new ArrayDeque<>();
+        this.uniqueNumbers = new LinkedHashSet<>();
 
         for (int num : nums) {
             add(num);
@@ -44,9 +46,11 @@ class FirstUnique {
     public int showFirstUnique() {
 
 
-        try {
-            return uniqueNumbers.peek();
-        } catch (NullPointerException e) {
+        Iterator<Integer> iterator = uniqueNumbers.iterator();
+
+        if (iterator.hasNext()) {
+            return iterator.next();
+        } else {
             return -1;
         }
 
