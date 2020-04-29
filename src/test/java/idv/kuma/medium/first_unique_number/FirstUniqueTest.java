@@ -3,10 +3,34 @@ package idv.kuma.medium.first_unique_number;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FirstUniqueTest {
 
 
     public FirstUnique firstUnique;
+
+
+    @Test
+    public void name() {
+        List<Integer> aaa = new ArrayList<>();
+
+
+        aaa.add(3);
+        aaa.add(8);
+
+        Integer three = new Integer(3);
+
+
+        boolean contains = aaa.contains(three);
+        System.out.println(contains);
+
+        aaa.remove(three);
+
+        System.out.println("111");
+
+    }
 
 
     @Test
