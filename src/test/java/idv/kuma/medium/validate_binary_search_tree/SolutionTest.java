@@ -1,5 +1,6 @@
 package idv.kuma.medium.validate_binary_search_tree;
 
+import idv.kuma.common.TreeNode;
 import org.junit.Assert;
 import org.junit.Test;
 

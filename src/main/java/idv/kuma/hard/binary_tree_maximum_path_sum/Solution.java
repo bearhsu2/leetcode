@@ -1,5 +1,7 @@
 package idv.kuma.hard.binary_tree_maximum_path_sum;
 
+import idv.kuma.common.TreeNode;
+
 class Solution {
 
     int globalMax = Integer.MIN_VALUE;

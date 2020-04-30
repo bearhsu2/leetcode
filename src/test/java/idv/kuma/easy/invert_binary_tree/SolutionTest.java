@@ -1,5 +1,6 @@
 package idv.kuma.easy.invert_binary_tree;
 
+import idv.kuma.common.TreeNode;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

@@ -1,6 +1,8 @@
 package idv.kuma.easy.same_tree;
 
 
+import idv.kuma.common.TreeNode;
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
