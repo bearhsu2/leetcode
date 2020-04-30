@@ -1,5 +1,7 @@
 package idv.kuma.easy.diameter_of_binary_tree;
 
+import idv.kuma.common.TreeNode;
+
 public class Solution {
 
     int maxDiameter = Integer.MIN_VALUE;

@@ -1,5 +1,6 @@
 package idv.kuma.easy.diameter_of_binary_tree;
 
+import idv.kuma.common.TreeNode;
 import org.junit.Assert;
 import org.junit.Test;
 

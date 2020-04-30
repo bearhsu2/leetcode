@@ -1,5 +1,7 @@
 package idv.kuma.easy.maximum_depth_of_binary_tree;
 
+import idv.kuma.common.TreeNode;
+
 public class Solution {
     public int maxDepth(TreeNode root) {
 

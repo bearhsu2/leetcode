@@ -1,5 +1,7 @@
 package idv.kuma.easy.search_in_a_binary_search_tree;
 
+import idv.kuma.common.TreeNode;
+
 public class Solution {
     public TreeNode searchBST(TreeNode root, int val) {
         if (root == null || root.val == val) {
