@@ -19,14 +19,23 @@ public class SolutionTest {
     }
 
     @Test
-    public void name1() {
+    public void name2() {
 
-        TreeNode root = new TreeNode(8);
+        TreeNode root = new TreeNode(0);
 
-        TreeNode left = new TreeNode(3);
+        TreeNode left = new TreeNode(1);
         root.left = left;
 
-        int[] arr = new int[]{8};
+        TreeNode right = new TreeNode(0);
+        root.right = right;
+
+        TreeNode leftLeft = new TreeNode(0);
+        left.left = leftLeft;
+
+        TreeNode leftRight = new TreeNode(1);
+        left.right = leftRight;
+
+        int[] arr = new int[]{0,0,1};
 
         Assert.assertEquals(false, new Solution().isValidSequence(root, arr));
     }

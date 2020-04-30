@@ -17,9 +17,11 @@ class Solution {
             return false;
         }
 
+        if (root.val != arr[0]) {
+            return false;
+        }
 
         int[] subarray = Arrays.copyOfRange(arr, 1, length);
-
         TreeNode left = root.left;
         TreeNode right = root.right;
 
@@ -27,10 +29,7 @@ class Solution {
             return left == null && right == null;
         }
 
-
-        return root.val == arr[0] &&
-                (isValidSequence(left, subarray) ||
-                        isValidSequence(right, subarray));
+        return isValidSequence(left, subarray) || isValidSequence(right, subarray);
 
 
     }
