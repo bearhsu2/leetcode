@@ -1,5 +1,7 @@
 package idv.kuma.easy.symmetric_tree;
 
+import idv.kuma.common.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 

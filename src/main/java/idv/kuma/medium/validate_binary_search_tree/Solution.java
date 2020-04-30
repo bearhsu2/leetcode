@@ -1,5 +1,7 @@
 package idv.kuma.medium.validate_binary_search_tree;
 
+import idv.kuma.common.TreeNode;
+
 import java.util.ArrayDeque;
 import java.util.Deque;
 

@@ -1,5 +1,7 @@
 package idv.kuma.easy.balanced_binary_tree;
 
+import idv.kuma.common.TreeNode;
+
 public class Solution {
     public boolean isBalanced(TreeNode root) {
 

@@ -1,5 +1,7 @@
 package idv.kuma.easy.invert_binary_tree;
 
+import idv.kuma.common.TreeNode;
+
 import java.util.ArrayDeque;
 import java.util.Deque;
 

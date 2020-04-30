@@ -1,5 +1,7 @@
 package idv.kuma.easy.sum_of_left_leaves;
 
+import idv.kuma.common.TreeNode;
+
 public class Solution {
 
 

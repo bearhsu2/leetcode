@@ -1,5 +1,7 @@
 package idv.kuma.easy.merge_two_binary_trees;
 
+import idv.kuma.common.TreeNode;
+
 public class Solution {
     public TreeNode mergeTrees(TreeNode t1, TreeNode t2) {
 
