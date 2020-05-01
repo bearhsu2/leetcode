@@ -7,7 +7,7 @@ public class Solution {
         for (int i = 0; i < n; i++) {
             for (int j = i; j < n - i; j++) {
 
-                //store the value at i,j th postion
+                //store the value at i,j th position
                 int copy = matrix[i][j];
 
                 //according to the formula mentioned above perform swaps
