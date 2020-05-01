@@ -1,5 +1,7 @@
 package idv.kuma.medium.construct_binary_search_tree_from_preorder_traversal;
 
+import idv.kuma.common.TreeNode;
+
 public class Solution {
     public TreeNode bstFromPreorder(int[] preorder) {
 

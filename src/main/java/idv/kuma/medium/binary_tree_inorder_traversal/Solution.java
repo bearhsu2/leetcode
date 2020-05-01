@@ -1,5 +1,7 @@
 package idv.kuma.medium.binary_tree_inorder_traversal;
 
+import idv.kuma.common.TreeNode;
+
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;

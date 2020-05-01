@@ -1,5 +1,6 @@
 package idv.kuma.medium.binary_tree_level_order_traversal;
 
+import idv.kuma.common.TreeNode;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
