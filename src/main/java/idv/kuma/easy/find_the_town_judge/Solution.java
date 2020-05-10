@@ -9,6 +9,11 @@ public class Solution {
     public int findJudge(int N, int[][] trusts) {
 
 
+        if (N == 1) {
+            return 1;
+        }
+
+
         Set<Integer> trusters = new HashSet<>();
         Set<Integer> all = new HashSet<>();
 
