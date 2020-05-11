@@ -8,13 +8,13 @@ class Solution {
         }
 
 
-        int start = 0;
-        int end = num;
+        long start = 1L;
+        long end = num;
 
 
         while (start <= end) {
-            int mid = (start + end) / 2;
-            int square = mid * mid;
+            long mid = (start + end) / 2;
+            long square = mid * mid;
 
             if (square == num) {
                 return true;

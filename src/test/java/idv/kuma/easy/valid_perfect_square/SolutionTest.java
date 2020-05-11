@@ -22,4 +22,13 @@ public class SolutionTest {
     }
 
 
+    @Test
+    public void _808201() {
+        Assertions.assertThat(
+                new Solution().isPerfectSquare(808201)
+        ).isTrue();
+
+    }
+
+
 }
