@@ -8,7 +8,6 @@ public class Solution {
 
         Set<Character> jewels = getHash(J);
 
-
         int sum = 0;
         for (char c : S.toCharArray()) {
 
