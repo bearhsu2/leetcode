@@ -13,11 +13,7 @@ public class Solution {
 
         for (char c : chars) {
 
-            if (counts.containsKey(c)) {
-                counts.put(c, counts.get(c) + 1);
-            } else {
-                counts.put(c, 1);
-            }
+            counts.merge(c, 1, Integer::sum);
         }
 
         for (int i = 0; i < chars.length; i++) {
