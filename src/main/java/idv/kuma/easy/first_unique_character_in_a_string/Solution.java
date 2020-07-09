@@ -7,12 +7,9 @@ public class Solution {
     public int firstUniqChar(String s) {
 
         char[] chars = s.toCharArray();
-
         Map<Character, Integer> counts = new HashMap<>();
 
-
         for (char c : chars) {
-
             counts.merge(c, 1, Integer::sum);
         }
 
