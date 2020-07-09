@@ -1,39 +1,27 @@
 package idv.kuma.easy.first_unique_character_in_a_string;
 
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Solution {
     public int firstUniqChar(String s) {
 
-
         char[] chars = s.toCharArray();
 
-        Set<Character> appeared = new HashSet<>();
-        Set<Character> uniques = new LinkedHashSet<>();
-
-        for (int i = 0; i < chars.length; i++) {
-            char c = chars[i];
+        Map<Character, Integer> counts = new HashMap<>();
 
 
-            if (appeared.contains(c)) {
-                uniques.remove(c);
+        for (char c : chars) {
+
+            if (counts.containsKey(c)) {
+                counts.put(c, counts.get(c) + 1);
             } else {
-                appeared.add(c);
-                uniques.add(c);
+                counts.put(c, 1);
             }
         }
 
-
-        if (uniques.isEmpty()) {
-            return -1;
-        }
-
-        char target = uniques.iterator().next();
-
         for (int i = 0; i < chars.length; i++) {
-            if (chars[i] == target) {
+            if (counts.get(chars[i]) == 1) {
                 return i;
             }
         }
