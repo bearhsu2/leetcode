@@ -10,6 +10,11 @@ public class SolutionTest {
     public void empty() {
         runAndCheck("", true);
     }
+
+    @Test
+    public void example1() {
+        runAndCheck("A man, a plan, a canal: Panama", true);
+    }
     @Test
     public void abcba() {
         runAndCheck("abcba", true);

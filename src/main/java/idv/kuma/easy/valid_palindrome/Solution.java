@@ -18,7 +18,7 @@ public class Solution {
 
         while (head <= tail && head <= length - 1 && tail >= 0) {
 
-            if (s.charAt(head) != s.charAt(tail)) {
+            if (Character.toLowerCase(s.charAt(head)) != Character.toLowerCase(s.charAt(tail))) {
                 return false;
             }
 
