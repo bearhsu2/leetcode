@@ -55,12 +55,12 @@ public class Solution {
     }
 
 
-    private boolean checkOneSet(char c, Set<Character> rowChars) {
+    private boolean checkOneSet(char c, Set<Character> chars) {
 
-        if (rowChars.contains(c)) {
+        if (chars.contains(c)) {
             return false;
         } else {
-            rowChars.add(c);
+            chars.add(c);
             return true;
         }
 
