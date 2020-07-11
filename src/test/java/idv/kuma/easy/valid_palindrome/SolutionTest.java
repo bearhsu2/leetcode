@@ -16,6 +16,12 @@ public class SolutionTest {
     }
 
 
+    @Test
+    public void abcbaa() {
+        runAndCheck("abcbaa", false);
+    }
+
+
     private AbstractBooleanAssert<?> runAndCheck(String s, boolean expected) {
         return Assertions.assertThat(new Solution().isPalindrome(s)).isEqualTo(expected);
     }
