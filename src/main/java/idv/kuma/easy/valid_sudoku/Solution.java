@@ -1,46 +1,70 @@
 package idv.kuma.easy.valid_sudoku;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class Solution {
 
 
     public boolean isValidSudoku(char[][] board) {
-        boolean rows = checkRows(board);
 
-        boolean columns = checkcolumns(board);
+        Map<Integer, Set<Character>> rowCharsByRowNumber = createNewMap();
+        Map<Integer, Set<Character>> colCharsByColNumber = createNewMap();
+        Map<Integer, Set<Character>> gridCharsByGridNumber = createNewMap();
 
-        boolean grids = checkGrids(board);
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
+                char c = board[i][j];
 
-        return rows && columns && grids;
-    }
+                if (c != '.') {
 
 
-    private boolean checkGrids(char[][] board) {
-        for (int i = 0; i < 9; i++) {
-            char[] row = board[i];
-            if (!checkRow(row)) {
-                return false;
+                    boolean row = checkOneSet(c, rowCharsByRowNumber.get(i));
+
+                    boolean column = checkOneSet(c, colCharsByColNumber.get(j));
+
+
+                    int index = i / 3 * 3 + j / 3;
+                    boolean grid = checkOneSet(c, gridCharsByGridNumber.get(index));
+
+
+                    if (!row || !column || !grid) {
+                        return false;
+                    }
+
+                }
+
             }
         }
+
+
         return true;
     }
 
 
-    private boolean checkRow(char[] row) {
+    private Map<Integer, Set<Character>> createNewMap() {
 
-        return false;
+        Map<Integer, Set<Character>> result = new HashMap<>();
+        for (int i = 0; i < 9; i++) {
+            result.put(i, new HashSet<>());
+        }
+
+        return result;
     }
 
 
-    private boolean checkcolumns(char[][] board) {
-        return false;
+    private boolean checkOneSet(char c, Set<Character> rowChars) {
+
+        if (rowChars.contains(c)) {
+            return false;
+        } else {
+            rowChars.add(c);
+            return true;
+        }
+
     }
 
-
-    private boolean checkRows(char[][] board) {
-        return false;
-    }
 
 }
