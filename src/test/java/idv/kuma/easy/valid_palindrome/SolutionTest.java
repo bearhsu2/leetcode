@@ -21,6 +21,10 @@ public class SolutionTest {
         runAndCheck("abcbaa", false);
     }
 
+    @Test
+    public void abcb_a() {
+        runAndCheck("abc_ba", true);
+    }
 
     private AbstractBooleanAssert<?> runAndCheck(String s, boolean expected) {
         return Assertions.assertThat(new Solution().isPalindrome(s)).isEqualTo(expected);
