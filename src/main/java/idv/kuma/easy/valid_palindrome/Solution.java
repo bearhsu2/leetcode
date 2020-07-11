@@ -9,10 +9,6 @@ public class Solution {
 
         int length = s.length();
 
-        if (length == 0) {
-            return true;
-        }
-
         int head = findNextAlphaNumeric(0, s);
         int tail = findPreviousAlphaNumeric(length - 1, s);
 
