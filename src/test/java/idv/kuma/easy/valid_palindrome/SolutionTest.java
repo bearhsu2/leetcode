@@ -7,6 +7,10 @@ import org.junit.Test;
 public class SolutionTest {
 
     @Test
+    public void empty() {
+        runAndCheck("", true);
+    }
+    @Test
     public void abcba() {
         runAndCheck("abcba", true);
     }
