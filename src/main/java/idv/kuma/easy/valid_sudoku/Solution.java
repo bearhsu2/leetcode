@@ -20,17 +20,9 @@ public class Solution {
 
                 if (c != '.') {
 
-
-                    boolean row = checkOneSet(c, rowCharsByRowNumber.get(i));
-
-                    boolean column = checkOneSet(c, colCharsByColNumber.get(j));
-
-
-                    int index = i / 3 * 3 + j / 3;
-                    boolean grid = checkOneSet(c, gridCharsByGridNumber.get(index));
-
-
-                    if (!row || !column || !grid) {
+                    if (!checkOneSet(c, rowCharsByRowNumber.get(i))
+                            || !checkOneSet(c, colCharsByColNumber.get(j))
+                            || !checkOneSet(c, gridCharsByGridNumber.get(i / 3 * 3 + j / 3))) {
                         return false;
                     }
 
