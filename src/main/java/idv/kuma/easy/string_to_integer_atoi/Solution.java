@@ -5,7 +5,7 @@ class Solution {
 
         String trimmed = str.trim();
 
-        if (trimmed.length()<=0) {
+        if (trimmed.length() <= 0) {
             return 0;
         }
 
@@ -14,7 +14,14 @@ class Solution {
         Long longValue = null;
         try {
 
-            if ("".equalsIgnoreCase(numbers[0]) && trimmed.charAt(0) == '-') {
+
+            if (numbers.length <= 0) {
+                return 0;
+            }
+
+            if (numbers.length >= 2
+                    && "".equalsIgnoreCase(numbers[0])
+                    && trimmed.charAt(0) == '-') {
                 longValue = -Long.valueOf(numbers[1]);
             } else {
                 longValue = Long.valueOf(numbers[0]);

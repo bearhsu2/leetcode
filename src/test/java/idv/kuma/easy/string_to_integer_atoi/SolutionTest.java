@@ -55,9 +55,18 @@ public class SolutionTest {
         runAndCheck("3.14159", 3);
         runAndCheck("-3.14159", -3);
     }
+
+
     @Test
     public void empty() {
 
         runAndCheck("", 0);
+    }
+
+
+    @Test
+    public void _one_signal() {
+
+        runAndCheck("+", 0);
     }
 }
