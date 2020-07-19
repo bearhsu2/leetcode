@@ -5,8 +5,10 @@ class Solution {
 
         String trimmed = str.trim();
 
+        String numbers[] = trimmed.split(" ");
 
-        Long longValue = Long.valueOf(trimmed);
+        Long longValue = Long.valueOf(numbers[0]);
+
 
 
         return longValue.intValue();

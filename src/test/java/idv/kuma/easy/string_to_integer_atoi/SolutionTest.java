@@ -19,4 +19,10 @@ public class SolutionTest {
     public void _spaces_n42() {
         runAndCheck("    -42", -42);
     }
+    @Test
+    public void _ending_words() {
+
+        runAndCheck("4193 with words", 4193);
+    }
+
 }
