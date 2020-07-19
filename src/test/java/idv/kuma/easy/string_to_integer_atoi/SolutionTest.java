@@ -34,10 +34,14 @@ public class SolutionTest {
         runAndCheck("words and 987", 0);
     }
 
-
     @Test
     public void _underflow() {
 
         runAndCheck("-91283472332", -2147483648);
+    }
+    @Test
+    public void _overflow() {
+
+        runAndCheck("91283472332", Integer.MAX_VALUE);
     }
 }

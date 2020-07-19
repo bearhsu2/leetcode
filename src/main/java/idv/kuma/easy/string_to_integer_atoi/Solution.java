@@ -15,6 +15,9 @@ class Solution {
             if (longValue < Integer.MIN_VALUE) {
                 return Integer.MIN_VALUE;
             }
+            if (longValue>Integer.MAX_VALUE) {
+                return Integer.MAX_VALUE;
+            }
 
         } catch (NumberFormatException e) {
             return 0;
