@@ -16,9 +16,9 @@ public class Solution {
         }
 
         for (int i = 0; i < length; i++) {
-            table[t.charAt(i) - 'a']--;
-
-            if (table[t.charAt(i) - 'a'] < 0) {
+            int index = t.charAt(i) - 'a';
+            table[index]--;
+            if (table[index] < 0) {
                 return false;
             }
 
