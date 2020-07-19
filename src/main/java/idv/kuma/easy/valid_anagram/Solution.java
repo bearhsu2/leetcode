@@ -1,34 +1,28 @@
 package idv.kuma.easy.valid_anagram;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Solution {
     public boolean isAnagram(String s, String t) {
 
-        if (s.length() != t.length()) {
+        int length = s.length();
+        if (length != t.length()) {
             return false;
         }
 
-        Map<Character, Integer> characterToCount = new HashMap<>();
+        char[] sChars = new char[26];
+        char[] tChars = new char[26];
 
-        char[] sChars = s.toCharArray();
-        char[] tChars = t.toCharArray();
-        for (char sChar : sChars) {
-            adjustMap(characterToCount, sChar);
+
+        for (int i = 0; i < length; i++) {
+
+            sChars[s.charAt(i) - 'a']++;
+            tChars[t.charAt(i) - 'a']++;
+
         }
 
-
-        for (char tChar : tChars) {
-            Integer count = characterToCount.get(tChar);
-
-            if (count == null || count == 0) {
+        for (int i = 0; i < 26; i++) {
+            if (sChars[i] != tChars[i]) {
                 return false;
             }
-
-            characterToCount.put(tChar, count - 1);
-
-
         }
 
 
@@ -36,14 +30,4 @@ public class Solution {
     }
 
 
-    private void adjustMap(Map<Character, Integer> characterToCount, char c) {
-        Integer count = characterToCount.get(c);
-        if (count == null) {
-            characterToCount.put(c, 0);
-            count = 0;
-        }
-
-        characterToCount.put(c, count + 1);
-
-    }
 }
