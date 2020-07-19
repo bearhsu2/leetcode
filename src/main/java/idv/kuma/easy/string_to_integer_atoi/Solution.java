@@ -1,5 +1,7 @@
 package idv.kuma.easy.string_to_integer_atoi;
 
+import java.math.BigInteger;
+
 class Solution {
     public int myAtoi(String str) {
 
@@ -11,7 +13,8 @@ class Solution {
 
         String numbers[] = trimmed.split("[^0-9]");
 
-        Long longValue = null;
+
+        BigInteger bigValue = null;
         try {
 
 
@@ -21,9 +24,6 @@ class Solution {
 
             if (numbers.length >= 2 && "".equalsIgnoreCase(numbers[0])) {
 
-
-//                    && trimmed.charAt(0) == '-') {
-
                 int sign = 0;
                 if (trimmed.charAt(0) == '-') {
                     sign = -1;
@@ -31,16 +31,18 @@ class Solution {
                     sign = 1;
                 }
 
-                longValue = Long.valueOf(numbers[1]) * sign;
+                bigValue = new BigInteger(numbers[1])
+                        .multiply(new BigInteger(String.valueOf(sign)));
+
             } else {
-                longValue = Long.valueOf(numbers[0]);
+                bigValue = new BigInteger(numbers[0]);
             }
 
 
-            if (longValue < Integer.MIN_VALUE) {
+            if (bigValue.compareTo(new BigInteger("" + Integer.MIN_VALUE)) < 0) {
                 return Integer.MIN_VALUE;
             }
-            if (longValue > Integer.MAX_VALUE) {
+            if (bigValue.compareTo(new BigInteger("" + Integer.MAX_VALUE)) > 0) {
                 return Integer.MAX_VALUE;
             }
 
@@ -49,7 +51,7 @@ class Solution {
         }
 
 
-        return longValue.intValue();
+        return bigValue.intValue();
 
     }
 }
