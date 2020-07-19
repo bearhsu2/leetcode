@@ -51,7 +51,6 @@ public class SolutionTest {
     @Test
     public void _overflow() {
 
-//        runAndCheck("91283472332", Integer.MAX_VALUE);
         runAndCheck("20000000000000000000", Integer.MAX_VALUE);
     }
 
