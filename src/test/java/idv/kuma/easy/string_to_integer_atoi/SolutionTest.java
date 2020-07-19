@@ -53,5 +53,6 @@ public class SolutionTest {
     public void _3p14159() {
 
         runAndCheck("3.14159", 3);
+        runAndCheck("-3.14159", -3);
     }
 }
