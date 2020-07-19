@@ -8,23 +8,21 @@ public class Solution {
             return false;
         }
 
-        char[] sChars = new char[26];
-        char[] tChars = new char[26];
+        int[] table = new int[26];
 
 
         for (int i = 0; i < length; i++) {
-
-            sChars[s.charAt(i) - 'a']++;
-            tChars[t.charAt(i) - 'a']++;
-
+            table[s.charAt(i) - 'a']++;
         }
 
-        for (int i = 0; i < 26; i++) {
-            if (sChars[i] != tChars[i]) {
+        for (int i = 0; i < length; i++) {
+            table[t.charAt(i) - 'a']--;
+
+            if (table[t.charAt(i) - 'a'] < 0) {
                 return false;
             }
-        }
 
+        }
 
         return true;
     }
