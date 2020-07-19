@@ -11,6 +11,11 @@ class Solution {
         Long longValue = null;
         try {
             longValue = Long.valueOf(numbers[0]);
+
+            if (longValue < Integer.MIN_VALUE) {
+                return Integer.MIN_VALUE;
+            }
+
         } catch (NumberFormatException e) {
             return 0;
         }

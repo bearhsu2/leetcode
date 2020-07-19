@@ -20,15 +20,24 @@ public class SolutionTest {
         runAndCheck("    -42", -42);
     }
 
+
     @Test
     public void _ending_words() {
 
         runAndCheck("4193 with words", 4193);
     }
+
+
     @Test
     public void _leading_words() {
 
         runAndCheck("words and 987", 0);
     }
 
+
+    @Test
+    public void _underflow() {
+
+        runAndCheck("-91283472332", -2147483648);
+    }
 }
