@@ -7,8 +7,13 @@ class Solution {
 
         String numbers[] = trimmed.split(" ");
 
-        Long longValue = Long.valueOf(numbers[0]);
 
+        Long longValue = null;
+        try {
+            longValue = Long.valueOf(numbers[0]);
+        } catch (NumberFormatException e) {
+            return 0;
+        }
 
 
         return longValue.intValue();
