@@ -5,17 +5,22 @@ class Solution {
 
         String trimmed = str.trim();
 
-        String numbers[] = trimmed.split(" ");
-
+        String numbers[] = trimmed.split("[^0-9]");
 
         Long longValue = null;
         try {
-            longValue = Long.valueOf(numbers[0]);
+
+            if ("".equalsIgnoreCase(numbers[0]) && trimmed.charAt(0) == '-') {
+                longValue = -Long.valueOf(numbers[1]);
+            } else {
+                longValue = Long.valueOf(numbers[0]);
+            }
+
 
             if (longValue < Integer.MIN_VALUE) {
                 return Integer.MIN_VALUE;
             }
-            if (longValue>Integer.MAX_VALUE) {
+            if (longValue > Integer.MAX_VALUE) {
                 return Integer.MAX_VALUE;
             }
 
