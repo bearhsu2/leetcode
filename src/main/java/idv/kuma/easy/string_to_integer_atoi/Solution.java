@@ -5,6 +5,10 @@ class Solution {
 
         String trimmed = str.trim();
 
+        if (trimmed.length()<=0) {
+            return 0;
+        }
+
         String numbers[] = trimmed.split("[^0-9]");
 
         Long longValue = null;
