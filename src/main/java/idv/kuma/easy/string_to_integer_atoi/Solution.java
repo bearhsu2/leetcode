@@ -19,10 +19,19 @@ class Solution {
                 return 0;
             }
 
-            if (numbers.length >= 2
-                    && "".equalsIgnoreCase(numbers[0])
-                    && trimmed.charAt(0) == '-') {
-                longValue = -Long.valueOf(numbers[1]);
+            if (numbers.length >= 2 && "".equalsIgnoreCase(numbers[0])) {
+
+
+//                    && trimmed.charAt(0) == '-') {
+
+                int sign = 0;
+                if (trimmed.charAt(0) == '-') {
+                    sign = -1;
+                } else if (trimmed.charAt(0) == '+') {
+                    sign = 1;
+                }
+
+                longValue = Long.valueOf(numbers[1]) * sign;
             } else {
                 longValue = Long.valueOf(numbers[0]);
             }

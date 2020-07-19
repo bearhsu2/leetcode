@@ -16,6 +16,12 @@ public class SolutionTest {
 
 
     @Test
+    public void _plus1() {
+        runAndCheck("+1", 1);
+    }
+
+
+    @Test
     public void _spaces_n42() {
         runAndCheck("    -42", -42);
     }
