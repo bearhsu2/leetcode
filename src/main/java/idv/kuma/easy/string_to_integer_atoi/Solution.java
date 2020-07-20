@@ -1,7 +1,5 @@
 package idv.kuma.easy.string_to_integer_atoi;
 
-import java.math.BigInteger;
-
 class Solution {
     public int myAtoi(String str) {
 
@@ -11,47 +9,37 @@ class Solution {
             return 0;
         }
 
-        String numbers[] = trimmed.split("[^0-9]");
+        char[] chars = trimmed.toCharArray();
 
+        long longValue = 0L;
 
-        BigInteger bigValue = null;
-        try {
+        int sign = 1;
+        for (int i = 0; i < chars.length; i++) {
 
+            char c = chars[i];
 
-            if (numbers.length <= 0) {
-                return 0;
-            }
+            if (c == '-' && i == 0) {
+                sign = -1;
+            } else if (c == '+' && i == 0) {
+                sign = 1;
+            } else if (c >= '0' && c <= '9') {
+                longValue = longValue * 10 + (c - '0');
 
-            if (numbers.length >= 2 && "".equalsIgnoreCase(numbers[0])) {
-
-                int sign = 0;
-                if (trimmed.charAt(0) == '-') {
-                    sign = -1;
-                } else if (trimmed.charAt(0) == '+') {
-                    sign = 1;
+                if (longValue * sign >= Integer.MAX_VALUE) {
+                    return Integer.MAX_VALUE;
                 }
 
-                bigValue = new BigInteger(numbers[1])
-                        .multiply(new BigInteger(String.valueOf(sign)));
+                if (longValue * sign <= Integer.MIN_VALUE) {
+                    return Integer.MIN_VALUE;
+                }
 
             } else {
-                bigValue = new BigInteger(numbers[0]);
+                break;
             }
-
-
-            if (bigValue.compareTo(new BigInteger("" + Integer.MIN_VALUE)) < 0) {
-                return Integer.MIN_VALUE;
-            }
-            if (bigValue.compareTo(new BigInteger("" + Integer.MAX_VALUE)) > 0) {
-                return Integer.MAX_VALUE;
-            }
-
-        } catch (NumberFormatException e) {
-            return 0;
         }
 
 
-        return bigValue.intValue();
-
+        return sign * (int) longValue;
     }
+
 }
