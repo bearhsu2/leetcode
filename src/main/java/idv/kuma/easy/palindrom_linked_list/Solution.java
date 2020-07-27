@@ -4,24 +4,20 @@ public class Solution {
     public boolean isPalindrome(ListNode head) {
 
 
-        int right = 0;
-        int left = 0;
-
-        int base = 1;
+        StringBuilder left = new StringBuilder();
+        StringBuilder right = new StringBuilder();
 
         ListNode current = head;
         while (current != null) {
 
-            right = right * 10 + current.val;
+            left.insert(0, current.val);
 
-            left = current.val * base + left;
-
+            right.append(current.val);
 
             current = current.next;
-            base *= 10;
 
         }
 
-        return right == left;
+        return right.toString().equals(left.toString());
     }
 }
