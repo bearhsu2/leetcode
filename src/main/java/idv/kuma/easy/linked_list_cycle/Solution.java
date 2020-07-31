@@ -1,25 +1,29 @@
 package idv.kuma.easy.linked_list_cycle;
 
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class Solution {
     public boolean hasCycle(ListNode head) {
 
-        ListNode current = head;
+        if (head == null) {
+            return false;
+        }
 
-        Set<ListNode> visited = new HashSet<>();
+        ListNode slow = head;
+        ListNode fast = head.next;
 
-        while (current != null) {
-            if (visited.contains(current)) {
-                return true;
+        while (fast != slow) {
+
+            if (fast == null || fast.next == null) {
+                return false;
             }
-            visited.add(current);
-            current = current.next;
+
+            slow = slow.next;
+            fast = fast.next.next;
+
+
         }
 
 
-        return false;
+        return true;
     }
 }
