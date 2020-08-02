@@ -6,8 +6,7 @@ public class Solution {
 
         if (root.left != null) {
 
-
-            if (root.left.val >= root.val) {
+            if (root.left.val >= root.val || !isValidBST(root.left)) {
                 return false;
             }
 

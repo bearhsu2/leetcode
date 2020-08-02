@@ -76,4 +76,44 @@ public class SolutionTest {
         );
 
     }
+
+
+//    @Test
+//    public void Has_Left_True_Then_True() {
+//
+//        TreeNode head = new TreeNode(5);
+//
+//        TreeNode left = new TreeNode(3);
+//        head.left = left;
+//
+//
+//        left.left = new TreeNode(1);
+//        left.right = new TreeNode(2);
+//
+//
+//        Assert.assertTrue(
+//                new Solution().isValidBST(head)
+//        );
+//
+//    }
+
+
+    @Test
+    public void Has_Left_False_Then_False() {
+
+        TreeNode head = new TreeNode(5);
+
+        TreeNode left = new TreeNode(3);
+        head.left = left;
+
+
+        left.left = new TreeNode(2);
+        left.right = new TreeNode(1);
+
+
+        Assert.assertFalse(
+                new Solution().isValidBST(head)
+        );
+
+    }
 }
