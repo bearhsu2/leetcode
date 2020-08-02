@@ -21,11 +21,25 @@ public class SolutionTest {
 
         TreeNode head = new TreeNode(3);
 
-
         TreeNode left = new TreeNode(2);
         head.left = left;
 
         Assert.assertTrue(
+                new Solution().isValidBST(head)
+        );
+
+    }
+
+
+    @Test
+    public void Has_Larger_Left_Then_False() {
+
+        TreeNode head = new TreeNode(3);
+
+        TreeNode left = new TreeNode(4);
+        head.left = left;
+
+        Assert.assertFalse(
                 new Solution().isValidBST(head)
         );
 
