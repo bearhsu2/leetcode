@@ -7,7 +7,9 @@ public class Solution {
         if (root.left != null) {
 
 
-            return root.left.val < root.val;
+            if (root.left.val >= root.val) {
+                return false;
+            }
 
         }
 
