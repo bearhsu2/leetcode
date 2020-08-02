@@ -24,17 +24,12 @@ public class Solution {
         }
 
 
-        if (root.left != null) {
-            if (root.left.val >= root.val || !doValid(root.left, min, root.val)) {
-                return false;
-            }
-
+        if (!doValid(root.left, min, root.val)) {
+            return false;
         }
 
-        if (root.right != null) {
-            if (root.right.val <= root.val || !doValid(root.right, root.val, max)) {
-                return false;
-            }
+        if (!doValid(root.right, root.val, max)) {
+            return false;
         }
 
         return true;
