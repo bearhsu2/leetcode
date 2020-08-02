@@ -78,24 +78,24 @@ public class SolutionTest {
     }
 
 
-//    @Test
-//    public void Has_Left_True_Then_True() {
-//
-//        TreeNode head = new TreeNode(5);
-//
-//        TreeNode left = new TreeNode(3);
-//        head.left = left;
-//
-//
-//        left.left = new TreeNode(1);
-//        left.right = new TreeNode(2);
-//
-//
-//        Assert.assertTrue(
-//                new Solution().isValidBST(head)
-//        );
-//
-//    }
+    @Test
+    public void Has_Left_True_Then_True() {
+
+        TreeNode head = new TreeNode(5);
+
+        TreeNode left = new TreeNode(3);
+        head.left = left;
+
+
+        left.left = new TreeNode(1);
+        left.right = new TreeNode(4);
+
+
+        Assert.assertTrue(
+                new Solution().isValidBST(head)
+        );
+
+    }
 
 
     @Test
@@ -107,7 +107,7 @@ public class SolutionTest {
         head.left = left;
 
 
-        left.left = new TreeNode(2);
+        left.left = new TreeNode(4);
         left.right = new TreeNode(1);
 
 
