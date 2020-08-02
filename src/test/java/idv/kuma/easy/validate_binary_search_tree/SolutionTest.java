@@ -60,4 +60,20 @@ public class SolutionTest {
         );
 
     }
+
+
+    @Test
+    public void Has_Smaller_Right_Then_False() {
+
+        TreeNode head = new TreeNode(3);
+
+        TreeNode right = new TreeNode(2);
+
+        head.right = right;
+
+        Assert.assertFalse(
+                new Solution().isValidBST(head)
+        );
+
+    }
 }

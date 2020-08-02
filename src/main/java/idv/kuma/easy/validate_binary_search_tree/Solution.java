@@ -14,6 +14,13 @@ public class Solution {
         }
 
 
+        if (root.right != null) {
+            if (root.right.val <= root.val) {
+                return false;
+            }
+        }
+
+
         return true;
 
 
