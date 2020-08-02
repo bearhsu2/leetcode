@@ -44,4 +44,20 @@ public class SolutionTest {
         );
 
     }
+
+
+    @Test
+    public void Has_Larger_Right_Then_True() {
+
+        TreeNode head = new TreeNode(3);
+
+        TreeNode right = new TreeNode(4);
+
+        head.right = right;
+
+        Assert.assertTrue(
+                new Solution().isValidBST(head)
+        );
+
+    }
 }
