@@ -14,7 +14,6 @@ public class Solution {
             return true;
         }
 
-
         if (min != null && root.val <= min) {
             return false;
         }
@@ -22,7 +21,6 @@ public class Solution {
         if (max != null && root.val >= max) {
             return false;
         }
-
 
         if (!doValid(root.left, min, root.val)) {
             return false;
