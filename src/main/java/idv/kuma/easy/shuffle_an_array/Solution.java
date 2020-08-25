@@ -8,8 +8,8 @@ import java.util.stream.Collectors;
 public class Solution {
 
     private final int[] original;
-    private final List<Integer> list;
     Random random = new Random();
+    private List<Integer> list;
     private int length;
 
 
@@ -50,6 +50,10 @@ public class Solution {
             remains--;
 
         }
+
+        this.list = Arrays.stream(original)
+                .boxed()
+                .collect(Collectors.toList());
 
 
         return shuffled;
