@@ -8,8 +8,9 @@ import java.util.stream.Collectors;
 public class Solution {
 
     private final int[] original;
+    private final int[] toBeShuffled;
     Random random = new Random();
-    private List<Integer> list;
+
     private int length;
 
 
@@ -17,16 +18,12 @@ public class Solution {
 
         this.original = nums;
         this.length = nums.length;
-        resetList();
+        this.toBeShuffled = new int[length];
+
 
     }
 
 
-    private void resetList() {
-        this.list = Arrays.stream(original)
-                .boxed()
-                .collect(Collectors.toList());
-    }
 
 
     /**
@@ -43,23 +40,23 @@ public class Solution {
      * Returns a random shuffling of the array.
      */
     public int[] shuffle() {
+        for (int i = 0; i < length; i++) {
+            toBeShuffled[i] = original[i];
+        }
 
-        int[] shuffled = new int[length];
-
-        int remains = length;
         for (int i = 0; i < length; i++) {
 
-            int randomIndex = random.nextInt(remains);
-            shuffled[i] = list.get(randomIndex);
-            list.remove(randomIndex);
-            remains--;
+            int randomIndex = random.nextInt(length);
+
+            int temp = toBeShuffled[randomIndex];
+            toBeShuffled[randomIndex] = toBeShuffled[i];
+            toBeShuffled[i] = temp;
 
         }
 
-        resetList();
 
 
-        return shuffled;
+        return toBeShuffled;
 
     }
 }
