@@ -17,10 +17,15 @@ public class Solution {
 
         this.original = nums;
         this.length = nums.length;
-        this.list = Arrays.stream(nums)
+        resetList();
+
+    }
+
+
+    private void resetList() {
+        this.list = Arrays.stream(original)
                 .boxed()
                 .collect(Collectors.toList());
-
     }
 
 
@@ -51,9 +56,7 @@ public class Solution {
 
         }
 
-        this.list = Arrays.stream(original)
-                .boxed()
-                .collect(Collectors.toList());
+        resetList();
 
 
         return shuffled;
