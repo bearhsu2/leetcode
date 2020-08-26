@@ -1,9 +1,6 @@
 package idv.kuma.easy.shuffle_an_array;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
-import java.util.stream.Collectors;
 
 public class Solution {
 
@@ -22,8 +19,6 @@ public class Solution {
 
 
     }
-
-
 
 
     /**
@@ -53,7 +48,6 @@ public class Solution {
             toBeShuffled[i] = temp;
 
         }
-
 
 
         return toBeShuffled;
