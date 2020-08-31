@@ -16,6 +16,12 @@ public class SolutionTest {
 
 
     @Test
+    public void _243() {
+        runAndCheck(true, 243);
+    }
+
+
+    @Test
     public void n3() {
         runAndCheck(false, -3);
     }
