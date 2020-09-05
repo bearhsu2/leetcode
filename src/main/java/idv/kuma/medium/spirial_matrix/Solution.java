@@ -26,7 +26,6 @@ public class Solution {
 
         boolean[][] footprint = new boolean[w][h];
 
-
         int i = 0;
         int j = 0;
 
