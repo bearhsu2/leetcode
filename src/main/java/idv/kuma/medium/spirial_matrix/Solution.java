@@ -14,6 +14,11 @@ public class Solution {
 
     public List<Integer> spiralOrder(int[][] matrix) {
 
+
+        if (matrix.length == 0) {
+            return new ArrayList<>();
+        }
+
         List<Integer> answer = new ArrayList<>();
 
         int w = matrix.length;
