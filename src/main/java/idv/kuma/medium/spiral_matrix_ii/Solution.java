@@ -9,7 +9,6 @@ public class Solution {
             {0, -1},
             {-1, 0}
     };
-    public int nextI;
 
 
     public int[][] generateMatrix(int n) {
@@ -27,15 +26,7 @@ public class Solution {
 
             answer[i][j] = currentValue;
 
-            int nextI = i + deltas[dIndex][0];
-            int nextJ = j + deltas[dIndex][1];
-
-            if (nextI < 0 || nextI >= n
-                    || nextJ < 0 || nextJ >= n
-                    || answer[nextI][nextJ] != 0) {
-                dIndex++;
-                dIndex %= 4;
-            }
+            dIndex = findNextDIndex(n, answer, i + deltas[dIndex][0], j + deltas[dIndex][1], dIndex);
 
             i += deltas[dIndex][0];
             j += deltas[dIndex][1];
@@ -44,5 +35,19 @@ public class Solution {
 
 
         return answer;
+    }
+
+
+    private int findNextDIndex(int n, int[][] answer, int nextI1, int nextJ1, int dIndex) {
+        int nextI = nextI1;
+        int nextJ = nextJ1;
+
+        if (nextI < 0 || nextI >= n
+                || nextJ < 0 || nextJ >= n
+                || answer[nextI][nextJ] != 0) {
+            dIndex++;
+            dIndex %= 4;
+        }
+        return dIndex;
     }
 }
