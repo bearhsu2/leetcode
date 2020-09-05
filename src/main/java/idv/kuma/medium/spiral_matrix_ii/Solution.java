@@ -26,7 +26,7 @@ public class Solution {
 
             answer[i][j] = currentValue;
 
-            dIndex = findNextDIndex(n, answer, i + deltas[dIndex][0], j + deltas[dIndex][1], dIndex);
+            dIndex = findNextDIndex(n, answer, i, j, dIndex);
 
             i += deltas[dIndex][0];
             j += deltas[dIndex][1];
@@ -38,9 +38,9 @@ public class Solution {
     }
 
 
-    private int findNextDIndex(int n, int[][] answer, int nextI1, int nextJ1, int dIndex) {
-        int nextI = nextI1;
-        int nextJ = nextJ1;
+    private int findNextDIndex(int n, int[][] answer, int i, int j, int dIndex) {
+        int nextI = i + deltas[dIndex][0];
+        int nextJ = j + deltas[dIndex][1];
 
         if (nextI < 0 || nextI >= n
                 || nextJ < 0 || nextJ >= n
