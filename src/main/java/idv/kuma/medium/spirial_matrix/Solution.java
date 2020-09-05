@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution {
-    public static int[][] deltas = new int[][]{
+    public static final int[][] deltas = new int[][]{
             {0, 1},
             {1, 0},
             {0, -1},
