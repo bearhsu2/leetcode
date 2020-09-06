@@ -19,34 +19,36 @@ class Solution {
 
         int[][] answer = new int[R * C][];
 
-
         int count = 0;
 
         int totalCounts = Math.max(R, C) * Math.max(R, C) * 4;
         int dIndex = 2;
         int maxStepsInDirection = 1;
         int currentStepsInDirection = 0;
-        int written = 0;
+
+        int answerIndex = 0;
         while (count <= totalCounts) {
 
-
+            // Fill answer if necessary
             if (0 <= r && r < R
                     && 0 <= c && c < C) {
-                answer[written] = new int[]{r, c};
-                written++;
+                answer[answerIndex] = new int[]{r, c};
+                answerIndex++;
             }
 
+            // Move to next position
             r += deltas[dIndex][0];
             c += deltas[dIndex][1];
-
-
             currentStepsInDirection++;
 
+
+            // Check if need to turn
             if (currentStepsInDirection >= maxStepsInDirection) {
                 dIndex++;
                 dIndex %= 4;
                 currentStepsInDirection = 0;
 
+                // Check if need to prolong path
                 if (dIndex % 2 == 0) {
                     maxStepsInDirection++;
                 }
