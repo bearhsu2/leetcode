@@ -11,7 +11,7 @@ class Solution {
     };
 
 
-    public int[][] spiralMatrixIII(int R, int C, int r0, int c0) {
+    public int[][] spiralMatrixIII(int R, int C, int r, int c) {
 
         if (R * C == 1) {
             return new int[][]{{0, 0}};
@@ -19,8 +19,6 @@ class Solution {
 
         int[][] answer = new int[R * C][];
 
-        int r = r0;
-        int c = c0;
 
         int count = 0;
 
