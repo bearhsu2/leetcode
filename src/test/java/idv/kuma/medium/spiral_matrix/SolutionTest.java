@@ -1,4 +1,4 @@
-package idv.kuma.medium.spirial_matrix;
+package idv.kuma.medium.spiral_matrix;
 
 import org.assertj.core.api.Assertions;
 import org.junit.Test;

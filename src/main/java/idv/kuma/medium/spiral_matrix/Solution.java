@@ -1,4 +1,4 @@
-package idv.kuma.medium.spirial_matrix;
+package idv.kuma.medium.spiral_matrix;
 
 import java.util.ArrayList;
 import java.util.List;
