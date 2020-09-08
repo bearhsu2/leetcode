@@ -10,6 +10,10 @@ class Solution {
 
         List<List<Integer>> answer = new ArrayList<>();
 
+        if (numRows==0) {
+            return answer;
+        }
+
         answer.add(new ArrayList<>(Collections.singletonList(1)));
 
 
