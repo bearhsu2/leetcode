@@ -1,20 +1,20 @@
 package idv.kuma.easy.missing_number;
 
-import java.util.stream.IntStream;
-
 public class Solution {
 
 
     public int missingNumber(int[] nums) {
 
-        int sum = 
+        int sum = 0;
 
-        int actualSum = IntStream.of(nums).sum();
+        for (int num : nums) {
+            sum += num;
+        }
 
 
         int expectedSum = (nums.length) * (nums.length + 1) / 2;
 
 
-        return expectedSum - actualSum;
+        return expectedSum - sum;
     }
 }
