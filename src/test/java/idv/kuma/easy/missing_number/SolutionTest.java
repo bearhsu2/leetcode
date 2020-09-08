@@ -7,10 +7,8 @@ public class SolutionTest {
 
     @Test
     public void name() {
-        Solution solution = new Solution();
-        int actual = solution.missingNumber(new int[]{9, 6, 4, 2, 3, 5, 7, 0, 1});
 
-        Assertions.assertThat(actual).isEqualTo(8);
+        Assertions.assertThat(new Solution().missingNumber(new int[]{9, 6, 4, 2, 3, 5, 7, 0, 1})).isEqualTo(8);
 
     }
 }
