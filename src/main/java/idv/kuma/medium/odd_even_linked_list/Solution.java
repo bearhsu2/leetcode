@@ -12,7 +12,7 @@ package idv.kuma.medium.odd_even_linked_list;
  */
 class Solution {
     public ListNode oddEvenList(ListNode head) {
-
+        return null;
     }
 }
 
