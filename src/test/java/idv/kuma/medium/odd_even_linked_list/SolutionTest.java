@@ -7,17 +7,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SolutionTest {
-
     @Test
-    public void _1_2__1_2() {
+    public void _1__1() {
 
-        ListNode head = makeList(1, 2);
+        ListNode head = makeList(1);
 
         ListNode actual = new Solution().oddEvenList(head);
 
-        Assertions.assertThat(goThrough(actual)).containsExactly(1, 2);
-
-
+        Assertions.assertThat(goThrough(actual)).containsExactly(1);
     }
 
 
@@ -46,6 +43,19 @@ public class SolutionTest {
         }
 
         return result;
+    }
+
+
+    @Test
+    public void _1_2__1_2() {
+
+        ListNode head = makeList(1, 2);
+
+        ListNode actual = new Solution().oddEvenList(head);
+
+        Assertions.assertThat(goThrough(actual)).containsExactly(1, 2);
+
+
     }
 
 
