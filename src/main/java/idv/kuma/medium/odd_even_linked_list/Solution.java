@@ -3,11 +3,11 @@ package idv.kuma.medium.odd_even_linked_list;
 /**
  * Definition for singly-linked list.
  * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * int val;
+ * ListNode next;
+ * ListNode() {}
+ * ListNode(int val) { this.val = val; }
+ * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
 class Solution {
@@ -20,7 +20,7 @@ class Solution {
         ListNode evenHead = head.next;
         ListNode evenCurrent = evenHead;
 
-        while (evenCurrent.next != null) {
+        while (evenCurrent != null && evenCurrent.next != null) {
             oddCurrent.next = oddCurrent.next.next;
             oddCurrent = oddCurrent.next;
 

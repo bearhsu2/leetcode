@@ -7,6 +7,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SolutionTest {
+
+    @Test
+    public void _1_2_3__1_3_2() {
+
+        ListNode head = makeList(1, 2, 3);
+
+        ListNode actual = new Solution().oddEvenList(head);
+
+        Assertions.assertThat(goThrough(actual)).containsExactly(1, 3, 2);
+
+
+    }
+
+
     @Test
     public void _1_2_3_4__1_3_2_4() {
 
