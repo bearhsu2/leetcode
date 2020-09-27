@@ -9,26 +9,13 @@ import java.util.List;
 public class SolutionTest {
 
     @Test
-    public void _1_2_3__1_3_2() {
+    public void _1_2__1_2() {
 
-        ListNode head = makeList(1, 2, 3);
-
-        ListNode actual = new Solution().oddEvenList(head);
-
-        Assertions.assertThat(goThrough(actual)).containsExactly(1, 3, 2);
-
-
-    }
-
-
-    @Test
-    public void _1_2_3_4__1_3_2_4() {
-
-        ListNode head = makeList(1, 2, 3, 4);
+        ListNode head = makeList(1, 2);
 
         ListNode actual = new Solution().oddEvenList(head);
 
-        Assertions.assertThat(goThrough(actual)).containsExactly(1, 3, 2, 4);
+        Assertions.assertThat(goThrough(actual)).containsExactly(1, 2);
 
 
     }
@@ -59,6 +46,32 @@ public class SolutionTest {
         }
 
         return result;
+    }
+
+
+    @Test
+    public void _1_2_3__1_3_2() {
+
+        ListNode head = makeList(1, 2, 3);
+
+        ListNode actual = new Solution().oddEvenList(head);
+
+        Assertions.assertThat(goThrough(actual)).containsExactly(1, 3, 2);
+
+
+    }
+
+
+    @Test
+    public void _1_2_3_4__1_3_2_4() {
+
+        ListNode head = makeList(1, 2, 3, 4);
+
+        ListNode actual = new Solution().oddEvenList(head);
+
+        Assertions.assertThat(goThrough(actual)).containsExactly(1, 3, 2, 4);
+
+
     }
 
 
