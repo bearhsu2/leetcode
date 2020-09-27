@@ -13,6 +13,10 @@ package idv.kuma.medium.odd_even_linked_list;
 class Solution {
     public ListNode oddEvenList(ListNode head) {
 
+        if (head == null) {
+            return null;
+        }
+
         ListNode oddHead = head;
         ListNode oddCurrent = oddHead;
 

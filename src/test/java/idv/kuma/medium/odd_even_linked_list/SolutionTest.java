@@ -8,6 +8,15 @@ import java.util.List;
 
 public class SolutionTest {
     @Test
+    public void _empty() {
+
+        ListNode head = makeList();
+
+        ListNode actual = new Solution().oddEvenList(head);
+
+        Assertions.assertThat(goThrough(actual)).containsExactly();
+    }
+    @Test
     public void _1__1() {
 
         ListNode head = makeList(1);
