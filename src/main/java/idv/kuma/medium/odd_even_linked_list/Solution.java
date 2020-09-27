@@ -20,7 +20,6 @@ class Solution {
         ListNode oddHead = head;
         ListNode oddCurrent = oddHead;
 
-
         ListNode evenHead = head.next;
         ListNode evenCurrent = evenHead;
 
@@ -30,7 +29,6 @@ class Solution {
 
             evenCurrent.next = evenCurrent.next.next;
             evenCurrent = evenCurrent.next;
-
 
         }
 
