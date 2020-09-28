@@ -6,19 +6,14 @@ public class Solution {
 
 
         ListNode previous = null;
-        ListNode current = null;
-
-        while (head != null) {
-
-            current = new ListNode(head.val);
+        ListNode current = head;
+        while (current != null) {
+            ListNode next = current.next;
             current.next = previous;
-
-            head = head.next;
             previous = current;
+            current = next;
         }
-
-
-        return current;
+        return previous;
 
     }
 }
