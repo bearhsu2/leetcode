@@ -6,32 +6,16 @@ import org.junit.Test;
 public class SolutionTest {
 
     @Test
-    public void _4_1_8_4_5_And_5_6_1_8_4_5_Then_8() {
+    public void _4_1_And_5_6_1_Then_Null() {
 
         ListNode listA = makeList(4, 1);
         ListNode listB = makeList(5, 6, 1);
-        ListNode common = makeList(8, 4, 5);
 
-        concat(listA, common);
-        concat(listB, common);
 
         ListNode actual = new Solution().getIntersectionNode(listA, listB);
 
-        Assert.assertEquals(actual, common);
+        Assert.assertEquals(actual, null);
 
-
-
-    }
-
-    private void concat(ListNode list, ListNode another) {
-
-        ListNode current = list;
-
-        while (current.next != null) {
-            current = current.next;
-        }
-
-        current.next = another;
 
     }
 
@@ -47,6 +31,37 @@ public class SolutionTest {
         }
 
         return dummyHead.next;
+
+    }
+
+
+    @Test
+    public void _4_1_8_4_5_And_5_6_1_8_4_5_Then_8() {
+
+        ListNode listA = makeList(4, 1);
+        ListNode listB = makeList(5, 6, 1);
+        ListNode common = makeList(8, 4, 5);
+
+        concat(listA, common);
+        concat(listB, common);
+
+        ListNode actual = new Solution().getIntersectionNode(listA, listB);
+
+        Assert.assertEquals(actual, common);
+
+
+    }
+
+
+    private void concat(ListNode list, ListNode another) {
+
+        ListNode current = list;
+
+        while (current.next != null) {
+            current = current.next;
+        }
+
+        current.next = another;
 
     }
 }

@@ -6,24 +6,35 @@ public class Solution {
 
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
 
-        return null;
-    }
-
-
-
-    private ListNode reverseList(ListNode head) {
-
-
-        ListNode previous = null;
-        ListNode current = head;
-        while (current != null) {
-            ListNode next = current.next;
-            current.next = previous;
-            previous = current;
-            current = next;
+        if (headA == null || headB == null) {
+            return null;
         }
-        return previous;
 
+
+        ListNode currentA = headA;
+        ListNode currentB = headB;
+
+        while (currentA != currentB) {
+
+            if (currentA == null) {
+                currentA = headB;
+            } else {
+                currentA = currentA.next;
+            }
+
+            if (currentB == null) {
+                currentB = headA;
+            } else {
+                currentB = currentB.next;
+            }
+
+
+        }
+
+
+        return currentA;
     }
+
+
 }
 
