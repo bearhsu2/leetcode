@@ -4,7 +4,6 @@ package idv.kuma.easy.intersection_of_two_linked_lists;
 public class Solution {
 
 
-
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
 
         if (headA == null || headB == null) {
