@@ -30,14 +30,16 @@ public class Solution {
 
         List<Integer> list = result.get(level);
 
-        if (level % 2 == 0) {
-            list.add(root.val);
-        } else {
-            list.add(0, root.val);
-        }
+
+        list.add(getIndex(level, list), root.val);
 
         doBfs(level + 1, root.left);
         doBfs(level + 1, root.right);
+    }
+
+
+    private int getIndex(int level, List<Integer> list) {
+        return level % 2 == 0 ? list.size() : 0;
     }
 
 }
