@@ -28,7 +28,13 @@ public class Solution {
             result.add(new ArrayList<>());
         }
 
-        result.get(level).add(root.val);
+        List<Integer> list = result.get(level);
+
+        if (level % 2 == 0) {
+            list.add(root.val);
+        } else {
+            list.add(0, root.val);
+        }
 
         doBfs(level + 1, root.left);
         doBfs(level + 1, root.right);
