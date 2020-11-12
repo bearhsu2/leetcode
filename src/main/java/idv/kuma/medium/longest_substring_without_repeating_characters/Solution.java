@@ -6,42 +6,29 @@ import java.util.Set;
 public class Solution {
     public int lengthOfLongestSubstring(String s) {
 
-        if(s.length() <= 0){
+        int n = s.length();
+        if (n <= 0) {
             return 0;
         }
 
-        char[] chars = s.toCharArray();
-
-        int head = 0;
-        int tail = 0;
-
         Set<Character> window = new HashSet<>();
-        window.add(chars[0]);
-        int maxLength = 1;
+        int i = 0;
+        int j = 0;
 
-        while(head < s.length() - 1){
-            if (chars[head] == chars[head + 1]) {
-                head++;
-                tail = head;
-                window.clear();
-                window.add(chars[head]);
-                if (window.size() > maxLength){
-                    maxLength = window.size();
-                }
-            } else if (!window.contains(chars[head + 1])){
-                head++;
-                window.add(chars[head]);
-                if (window.size() > maxLength){
-                    maxLength = window.size();
-                }
+        int maxLength = 0;
+        while (i < n && j < n) {
+
+            if (window.contains(s.charAt(j))) {
+                window.remove(s.charAt(i));
+                i++;
             } else {
-                while (window.contains(chars[head + 1])){
-                    window.remove(chars[tail]);
-                    tail++;
-                }
+                window.add(s.charAt(j));
+                j++;
+                maxLength = Math.max(maxLength, j - i);
             }
 
         }
+
 
         return maxLength;
     }
