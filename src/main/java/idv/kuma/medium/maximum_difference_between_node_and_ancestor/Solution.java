@@ -29,22 +29,13 @@ public class Solution {
             return;
         }
 
-        System.out.println("=====================");
-        System.out.println(node.val);
 
         int newMin = Math.min(node.val, parentMin);
         int newMax = Math.max(node.val, parentMax);
 
         int diff = Math.abs(newMin - newMax);
 
-        System.out.println("min: " + parentMin + " => " + newMin);
-        System.out.println("max: " + parentMax + " => " + newMax);
-
-        System.out.println("maxDiff: " + maxDiff);
         maxDiff = Math.max(maxDiff, diff);
-
-        System.out.println("            => " + maxDiff);
-
 
         doTraverse(node.left, newMin, newMax);
         doTraverse(node.right, newMin, newMax);
