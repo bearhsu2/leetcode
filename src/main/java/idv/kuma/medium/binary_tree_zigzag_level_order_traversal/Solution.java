@@ -2,12 +2,16 @@ package idv.kuma.medium.binary_tree_zigzag_level_order_traversal;
 
 import idv.kuma.common.TreeNode;
 
+import java.security.Permission;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Solution {
 
     List<List<Integer>> result;
+
+   
 
 
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
