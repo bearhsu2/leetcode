@@ -5,6 +5,10 @@ import idv.kuma.common.TreeNode;
 class Solution {
     public boolean hasPathSum(TreeNode root, int targetSum) {
 
+        if (root == null) {
+            return false;
+        }
+
         if (root.right == null && root.left == null) {
             return targetSum == root.val;
         }
