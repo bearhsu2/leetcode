@@ -1,25 +1,24 @@
 package idv.kuma.easy.first_unique_character_in_a_string;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Solution {
     public int firstUniqChar(String s) {
 
-        char[] chars = s.toCharArray();
-        Map<Character, Integer> counts = new HashMap<>();
 
-        for (char c : chars) {
-            counts.merge(c, 1, Integer::sum);
-        }
+        int result = Integer.MAX_VALUE;
 
-        for (int i = 0; i < chars.length; i++) {
-            if (counts.get(chars[i]) == 1) {
-                return i;
+        for (char c = 'a'; c <= 'z'; c++) {
+
+            int index = s.indexOf(c);
+
+            if (index != -1 && index == s.lastIndexOf(c)) {
+                result = Math.min(index, result);
             }
+
         }
 
-        return -1;
+        return result == Integer.MAX_VALUE ? -1 : result;
+
+
 
     }
 }
