@@ -10,9 +10,7 @@ class Solution {
             return 0;
         }
 
-        Queue<int[]> queue = new PriorityQueue<>((a, b) -> a[0] == b[0] ? b[1] - a[1] : a[0] - b[0]);
-        for (int[] interval : intervals)
-            queue.offer(interval);
+        Queue<int[]> queue = makePriprityQueue(intervals);
 
         int[] current = queue.poll();
         while (!queue.isEmpty()) {
@@ -25,5 +23,12 @@ class Solution {
         }
 
         return result;
+    }
+
+    private Queue<int[]> makePriprityQueue(int[][] intervals) {
+        Queue<int[]> queue = new PriorityQueue<>((a, b) -> a[0] == b[0] ? b[1] - a[1] : a[0] - b[0]);
+        for (int[] interval : intervals)
+            queue.offer(interval);
+        return queue;
     }
 }
