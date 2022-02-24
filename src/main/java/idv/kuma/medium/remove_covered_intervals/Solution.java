@@ -12,6 +12,10 @@ class Solution {
 
         Queue<int[]> queue = makePriprityQueue(intervals);
 
+        return countCovereds(result, queue);
+    }
+
+    private int countCovereds(int result, Queue<int[]> queue) {
         int[] current = queue.poll();
         while (!queue.isEmpty()) {
             int[] next = queue.poll();
@@ -21,7 +25,6 @@ class Solution {
                 current = next;
             }
         }
-
         return result;
     }
 
