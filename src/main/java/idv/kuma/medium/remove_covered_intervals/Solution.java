@@ -1,45 +1,28 @@
 package idv.kuma.medium.remove_covered_intervals;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 class Solution {
     public int removeCoveredIntervals(int[][] intervals) {
-//        List<int[]> sorted = Arrays.stream(intervals)
-//                .sorted(Comparator.comparingInt(a -> a[0]))
-//                .collect(Collectors.toList());
-
-        Arrays.sort(intervals, (a, b) -> {
-            int lResult = a[0] - b[0];
-            if (lResult != 0) {
-                return lResult;
-            }
-            return b[1] - a[1];
-        });
-
-        List<int[]> sorted = Arrays.stream(intervals).collect(Collectors.toList());
-        int result = sorted.size();
-
-        Set<Integer> removedIndex = new HashSet<>();
-        for (int i = 0; i < sorted.size() - 1; i++) {
-            if (removedIndex.contains(i)) continue;
-
-            int[] current = sorted.get(i);
-
-            for (int j = i + 1; j < sorted.size() ; j++) {
-                int[] next = sorted.get(j);
-                if (next[1] <= current[1]) {
-                    result--;
-                    removedIndex.add(j);
-                } else {
-                    break;
-                }
-            }
+        int result = intervals.length;
+        if (result == 0) {
+            return 0;
         }
 
+        Queue<int[]> queue = new PriorityQueue<>((a, b) -> a[0] == b[0] ? b[1] - a[1] : a[0] - b[0]);
+        for (int[] interval : intervals)
+            queue.offer(interval);
+
+        int[] current = queue.poll();
+        while (!queue.isEmpty()) {
+            int[] next = queue.poll();
+            if (current[0] <= next[0] && current[1] >= next[1]) {
+                result--;
+            } else {
+                current = next;
+            }
+        }
 
         return result;
     }
