@@ -5,13 +5,15 @@ import java.util.Arrays;
 class Solution {
     public int largestPerimeter(int[] nums) {
 
-        int[] sorted = Arrays.stream(nums).sorted().toArray();
+//        int[] sorted = Arrays.stream(nums).sorted().toArray();
+
+        Arrays.sort(nums);
 
 
-        for (int i = sorted.length - 1; i >= 2; i--) {
+        for (int i = nums.length - 1; i >= 2; i--) {
 
-            if (sorted[i] < sorted[i - 1] + sorted[i - 2]) {
-                return sorted[i] + sorted[i - 1] + sorted[i - 2];
+            if (nums[i] < nums[i - 1] + nums[i - 2]) {
+                return nums[i] + nums[i - 1] + nums[i - 2];
             }
 
         }
