@@ -23,13 +23,12 @@ class Solution {
 
             String resultStr = "";
 
-
             resultStr += "A";
             diff -= 26;
 
-            char result = (char) (base + diff);
+            char currChar = (char) (base + diff);
 
-            return resultStr + result;
+            return resultStr + currChar;
         }
 
 
