@@ -16,8 +16,9 @@ class Solution {
 
 
         if (diff < 26) {
-            char result = (char) (base + diff);
-            return String.valueOf(result);
+            String resultStr = "";
+            char currChar = (char) (base + diff);
+            return resultStr + currChar;
         } else {
 
             String resultStr = "";
