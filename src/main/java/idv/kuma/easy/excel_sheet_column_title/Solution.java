@@ -20,7 +20,7 @@ class Solution {
         String resultStr = "";
         if (diff < 26) {
             char currChar = getOneChar(diff);
-            return resultStr + currChar;
+            resultStr += currChar;
         } else {
 
             int howMany26s = diff / 26;
@@ -29,9 +29,12 @@ class Solution {
 
             resultStr += oneChar;
             diff %= 26;
+            
             char currChar = getOneChar(diff);
-            return resultStr + currChar;
+            resultStr += currChar;
         }
+
+        return resultStr;
 
 
     }
