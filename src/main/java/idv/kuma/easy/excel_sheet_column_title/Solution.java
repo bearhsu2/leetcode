@@ -18,13 +18,14 @@ class Solution {
 
 
         while (columnNumber > 0) {
-            int diff = columnNumber - 1;
 
-            int offset = diff % 26;
+            columnNumber -= 1;
+
+            int offset = columnNumber % 26;
 
             resultStr = getOneChar(offset) + resultStr;
 
-            columnNumber = (diff - offset) / 26;
+            columnNumber = columnNumber / 26;
         }
 
         return resultStr;

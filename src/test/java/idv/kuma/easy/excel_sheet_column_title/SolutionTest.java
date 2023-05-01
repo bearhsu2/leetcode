@@ -51,4 +51,9 @@ public class SolutionTest {
     public void _703_AAA() {
         Assertions.assertThat(sut.convertToTitle(703)).isEqualTo("AAA");
     }
+
+    @Test
+    public void _704_AAB() {
+        Assertions.assertThat(sut.convertToTitle(704)).isEqualTo("AAB");
+    }
 }
