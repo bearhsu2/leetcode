@@ -4,23 +4,18 @@ import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
 public class SolutionTest {
+
+    private final Solution sut = new Solution();
+
     @Test
     public void _1_A() {
 
-        Solution sut = new Solution();
-
-        String actual = sut.convertToTitle(1);
-
-        Assertions.assertThat(actual).isEqualTo("A");
+        Assertions.assertThat(sut.convertToTitle(1)).isEqualTo("A");
     }
 
     @Test
     public void _2_B() {
 
-        Solution sut = new Solution();
-
-        String actual = sut.convertToTitle(2);
-
-        Assertions.assertThat(actual).isEqualTo("B");
+        Assertions.assertThat(sut.convertToTitle(2)).isEqualTo("B");
     }
 }
