@@ -11,6 +11,11 @@ package idv.kuma.easy.excel_sheet_column_title;
 class Solution {
     public String convertToTitle(int columnNumber) {
 
-        return "A";
+        char base = 'A';
+        int diff = columnNumber - 1; // 'A' maps to 1
+        char result = (char) (base + diff);
+
+
+        return String.valueOf(result);
     }
 }

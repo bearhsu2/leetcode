@@ -13,4 +13,14 @@ public class SolutionTest {
 
         Assertions.assertThat(actual).isEqualTo("A");
     }
+
+    @Test
+    public void _2_B() {
+
+        Solution sut = new Solution();
+
+        String actual = sut.convertToTitle(2);
+
+        Assertions.assertThat(actual).isEqualTo("B");
+    }
 }
