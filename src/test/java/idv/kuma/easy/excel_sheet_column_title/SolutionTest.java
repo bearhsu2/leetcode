@@ -1,7 +1,6 @@
 package idv.kuma.easy.excel_sheet_column_title;
 
 import org.assertj.core.api.Assertions;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class SolutionTest {
@@ -31,6 +30,11 @@ public class SolutionTest {
     @Test
     public void _28_AB() {
         Assertions.assertThat(sut.convertToTitle(28)).isEqualTo("AB");
+    }
+
+    @Test
+    public void _52_AZ() {
+        Assertions.assertThat(sut.convertToTitle(52)).isEqualTo("AZ");
     }
 
     @Test
