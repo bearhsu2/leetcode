@@ -22,8 +22,13 @@ class Solution {
             char currChar = getOneChar(diff);
             return resultStr + currChar;
         } else {
-            resultStr += "A";
-            diff -= 26;
+
+            int howMany26s = diff / 26;
+
+            char oneChar = getOneChar(howMany26s - 1);
+
+            resultStr += oneChar;
+            diff %= 26;
             char currChar = getOneChar(diff);
             return resultStr + currChar;
         }
