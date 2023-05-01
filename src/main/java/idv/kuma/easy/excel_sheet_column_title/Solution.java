@@ -19,7 +19,16 @@ class Solution {
             char result = (char) (base + diff);
             return String.valueOf(result);
         } else {
-            return "AA";
+
+            String resultStr = "";
+
+
+            resultStr += "A";
+            diff -= 26;
+
+            char result = (char) (base + diff);
+
+            return resultStr + result;
         }
 
 
