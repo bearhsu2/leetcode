@@ -11,6 +11,6 @@ package idv.kuma.easy.excel_sheet_column_title;
 class Solution {
     public String convertToTitle(int columnNumber) {
 
-        return "";
+        return "A";
     }
 }
