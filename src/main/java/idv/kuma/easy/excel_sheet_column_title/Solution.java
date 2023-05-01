@@ -19,11 +19,12 @@ class Solution {
 
         while (columnNumber > 0) {
             int diff = columnNumber - 1;
-            int shift = diff % 26;
 
-            resultStr = getOneChar(shift) + resultStr;
+            int offset = diff % 26;
 
-            columnNumber = (diff - shift) / 26;
+            resultStr = getOneChar(offset) + resultStr;
+
+            columnNumber = (diff - offset) / 26;
         }
 
         return resultStr;
