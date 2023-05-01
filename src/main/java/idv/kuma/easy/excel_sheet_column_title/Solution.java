@@ -14,21 +14,17 @@ class Solution {
 
     public String convertToTitle(int columnNumber) {
 
-        int diff = columnNumber - 1; // 'A' maps to 1
-
-
         String resultStr = "";
 
-        if (diff >= 26) {
 
-            int howMany26s = diff / 26;
-            char oneChar = getOneChar(howMany26s - 1);
-            resultStr += oneChar;
-            diff %= 26;
+        while (columnNumber > 0) {
+            int diff = columnNumber - 1;
+            int shift = diff % 26;
+
+            resultStr = getOneChar(shift) + resultStr;
+
+            columnNumber = (diff - shift) / 26;
         }
-
-        char currChar = getOneChar(diff);
-        resultStr += currChar;
 
         return resultStr;
 
