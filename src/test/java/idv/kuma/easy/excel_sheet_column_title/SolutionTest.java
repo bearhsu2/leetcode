@@ -9,13 +9,16 @@ public class SolutionTest {
 
     @Test
     public void _1_A() {
-
         Assertions.assertThat(sut.convertToTitle(1)).isEqualTo("A");
     }
 
     @Test
     public void _2_B() {
-
         Assertions.assertThat(sut.convertToTitle(2)).isEqualTo("B");
+    }
+
+    @Test
+    public void _26_Z() {
+        Assertions.assertThat(sut.convertToTitle(26)).isEqualTo("Z");
     }
 }
