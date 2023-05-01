@@ -18,6 +18,7 @@ class Solution {
 
 
         String resultStr = "";
+
         if (diff >= 26) {
 
             int howMany26s = diff / 26;

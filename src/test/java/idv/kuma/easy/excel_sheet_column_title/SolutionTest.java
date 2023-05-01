@@ -41,4 +41,9 @@ public class SolutionTest {
     public void _53_BA() {
         Assertions.assertThat(sut.convertToTitle(53)).isEqualTo("BA");
     }
+
+    @Test
+    public void _702_ZZ() {
+        Assertions.assertThat(sut.convertToTitle(702)).isEqualTo("ZZ");
+    }
 }
