@@ -21,4 +21,9 @@ public class SolutionTest {
     public void _26_Z() {
         Assertions.assertThat(sut.convertToTitle(26)).isEqualTo("Z");
     }
+
+    @Test
+    public void _27_AA() {
+        Assertions.assertThat(sut.convertToTitle(27)).isEqualTo("AA");
+    }
 }

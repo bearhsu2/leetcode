@@ -13,9 +13,15 @@ class Solution {
 
         char base = 'A';
         int diff = columnNumber - 1; // 'A' maps to 1
-        char result = (char) (base + diff);
 
 
-        return String.valueOf(result);
+        if (diff < 26) {
+            char result = (char) (base + diff);
+            return String.valueOf(result);
+        } else {
+            return "AA";
+        }
+
+
     }
 }
