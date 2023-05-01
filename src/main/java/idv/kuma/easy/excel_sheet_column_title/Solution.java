@@ -15,22 +15,22 @@ class Solution {
         int diff = columnNumber - 1; // 'A' maps to 1
 
 
+        String resultStr = "";
         if (diff < 26) {
-            String resultStr = "";
-            char currChar = (char) (base + diff);
+            char currChar = getOneChar(base, diff);
             return resultStr + currChar;
         } else {
-
-            String resultStr = "";
-
             resultStr += "A";
             diff -= 26;
-
-            char currChar = (char) (base + diff);
-
+            char currChar = getOneChar(base, diff);
             return resultStr + currChar;
         }
 
 
+    }
+
+    private char getOneChar(char base, int diff) {
+        char currChar = (char) (base + diff);
+        return currChar;
     }
 }
