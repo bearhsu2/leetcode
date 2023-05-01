@@ -14,7 +14,7 @@ class Solution {
 
     public String convertToTitle(int columnNumber) {
 
-        String resultStr = "";
+        StringBuilder resultStr = new StringBuilder();
 
 
         while (columnNumber > 0) {
@@ -23,12 +23,12 @@ class Solution {
 
             int offset = columnNumber % 26;
 
-            resultStr = getOneChar(offset) + resultStr;
+            resultStr.insert(0, getOneChar(offset));
 
             columnNumber = columnNumber / 26;
         }
 
-        return resultStr;
+        return resultStr.toString();
 
 
     }
