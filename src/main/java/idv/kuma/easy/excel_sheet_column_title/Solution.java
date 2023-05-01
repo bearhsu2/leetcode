@@ -18,21 +18,16 @@ class Solution {
 
 
         String resultStr = "";
-        if (diff < 26) {
-            char currChar = getOneChar(diff);
-            resultStr += currChar;
-        } else {
+        if (diff >= 26) {
 
             int howMany26s = diff / 26;
-
             char oneChar = getOneChar(howMany26s - 1);
-
             resultStr += oneChar;
             diff %= 26;
-            
-            char currChar = getOneChar(diff);
-            resultStr += currChar;
         }
+
+        char currChar = getOneChar(diff);
+        resultStr += currChar;
 
         return resultStr;
 
