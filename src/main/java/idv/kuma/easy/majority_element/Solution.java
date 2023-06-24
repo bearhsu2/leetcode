@@ -11,11 +11,7 @@ public class Solution {
 
         for (int num : nums) {
 
-            Integer count = elementToCount.get(num);
-
-            if (count == null) {
-                count = 0;
-            }
+            int count = elementToCount.computeIfAbsent(num, e -> 0);
 
             count++;
 
